@@ -4,7 +4,8 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "post"
+    "displayName": "post",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,15 +18,17 @@
     "content": {
       "type": "blocks"
     },
-    "cover": {
+    "picture": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "private": true,
       "allowedTypes": [
         "images",
-        "files",
         "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
+        "audios",
+        "files"
+      ]
     },
     "slug": {
       "type": "uid",
@@ -36,6 +39,9 @@
       "relation": "manyToOne",
       "target": "api::author.author",
       "inversedBy": "posts"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

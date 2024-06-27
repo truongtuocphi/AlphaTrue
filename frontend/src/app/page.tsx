@@ -72,7 +72,7 @@ export default function Home() {
     const month = (dateObj.getMonth() + 1).toString().padStart(2, "0");
     const day = dateObj.getDate().toString().padStart(2, "0");
 
-    return `${day}/${month}/${year}`;
+    return `${day}-${month}-${year}`;
   };
 
   return (
