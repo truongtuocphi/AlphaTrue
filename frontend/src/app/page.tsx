@@ -4,7 +4,6 @@ import Link from "next/link";
 import IconLogo from "@/components/icons/IconLogo";
 import { useEffect, useState } from "react";
 
-// Định nghĩa kiểu dữ liệu cho DataPosts
 interface PostAttributes {
   id: number;
   title: string;
@@ -53,8 +52,18 @@ export default function Home() {
     fetchData();
   }, []);
 
-  if (isLoading) return <p>Loading...</p>;
-  if (!DataPosts) return <p>No profile data</p>;
+  if (isLoading)
+    return (
+      <div className="w-full h-svh flex justify-center">
+        <p className="text-3xl">Loading...</p>
+      </div>
+    );
+  if (!DataPosts)
+    return (
+      <div className="w-full h-svh flex justify-center">
+        <p className="text-3xl">No profile data</p>;
+      </div>
+    );
 
   // Function to format date
   const formatDate = (isoDate: string): string => {
@@ -69,7 +78,7 @@ export default function Home() {
   return (
     <div>
       <div className="mt-20 h-96">
-        <h1 className="font-light text-3xl text-center leading-normal lg:text-4xl">
+        <h1 className="font-light text-xl text-center leading-normal sm:text-3xl lg:text-4xl">
           The true solution for the alpha
           <br />
           projects in the{" "}
@@ -144,12 +153,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="w-full px-24 py-40">
-        <div className="flex flex-col gap-14">
+      <div className="w-full px-7 py-16 lg:px-24 lg:py-40">
+        <div className="flex flex-col gap-9 sm:gap-14">
           <h3 className="font-semibold">NEWS & ANNOUNCEMENTS</h3>
           {DataPosts.map((post, index) => (
             <a href={`/blog/${index + 1}`} key={index}>
-              <div className="flex items-center gap-14">
+              <div className="flex flex-col items-start gap-3 sm:gap-14 sm:flex-row sm:items-center">
                 <div className="text-xs font-semibold text-gray-500">
                   {formatDate(post.createdAt)}
                 </div>

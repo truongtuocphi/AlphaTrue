@@ -22,8 +22,7 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
           `http://localhost:1337/api/posts/${params.id}`
         );
         const data = await response.json();
-        setDataPost(data?.data?.attributes);
-        console.log(data?.data?.attributes);
+        setDataPost(data.data.attributes);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -63,22 +62,31 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
   };
 
   const renderLink = (item: any, index: number) => (
-    <Link href={item.url} key={index} style={{ color: "blue" }} target="_blank">
+    <Link
+      href={item.url}
+      key={index}
+      style={{ color: "blue", textDecoration: "underline" }}
+      target="_blank"
+    >
       {item.children[0].text}
     </Link>
   );
 
-  const breakLine = (item: any, index: number) => <br />;
+  const breakLine = (item: any, index: number) => {
+    return item.text === "" && <br key={index} />;
+  };
 
   const renderContent = (content: any) => {
     return content.map((block: any, index: number) => {
       switch (block.type) {
         case "paragraph":
           return (
-            <p key={index}>
+            <p key={index} className="my-3">
               {block.children.map((item: any, childIndex: number) =>
                 item.type === "link"
                   ? renderLink(item, childIndex)
+                  : item.text === ""
+                  ? breakLine(item, childIndex)
                   : renderText(item, childIndex)
               )}
             </p>
@@ -92,7 +100,8 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
                 alt={block.image.url || ""}
                 width={block.image.width}
                 height={block.image.height}
-                priority
+                priority={true}
+                style={{ color: "transparent" }}
               />
             </div>
           );
@@ -129,7 +138,7 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-10 pt-20 pb-32">
+    <div className="max-w-4xl mx-auto px-5 pt-10 pb-12 lg:px-10 lg:pt-20 lg:pb-32">
       <div className="flex flex-col gap-3 mb-4">
         <h1 className="text-2xl lg:text-4xl">{DataPost.title}</h1>
         <div className="text-sm text-gray-600 mb-12">
@@ -142,7 +151,7 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
       </div>
       <div className="w-full pt-6">
         <div className="flex flex-col gap-14">
-          <h3 className="font-semibold">NEWS & ANNOUNCEMENTS</h3>
+          <h1 className="font-semibold">NEWS & ANNOUNCEMENTS</h1>
           {DataPosts.map((post, index) => (
             <a href={`/blog/${index + 1}`} key={index}>
               <div className="flex items-center gap-14">

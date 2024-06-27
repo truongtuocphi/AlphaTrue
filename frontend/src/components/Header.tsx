@@ -101,7 +101,7 @@ export default function Header() {
         {activeTitle && (
           <div className="lg:border-t-gray-200 lg:border-t-[1px] lg:w-36 lg:pt-2">
             <Link
-              href="/"
+              href="#"
               onClick={openModal}
               className="text-sm font-semibold text-gray-600 hover:text-gray-400 py-2 block"
             >
@@ -180,7 +180,6 @@ export default function Header() {
                         </Link>
                       </p>
                     </div>
-
                     <div className="mt-4">
                       <button
                         type="button"

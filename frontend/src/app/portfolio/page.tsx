@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Portfolio() {
-  return <div>Portfolio</div>;
+  return <div className="w-full h-svh">Portfolio</div>;
 }

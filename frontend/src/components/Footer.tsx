@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import IconLogoWhite from "./icons/IconLogoWhite";
 import IconArrow from "./icons/IconArrow";
@@ -15,18 +15,20 @@ const listItemFooter = [
 ];
 
 export default function Footer() {
-  const isBrowser = () => typeof window !== "undefined";
-
+  const [isVisible, setIsVisible] = useState(false);
   const scrollToTop = () => {
-    if (!isBrowser()) return;
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    isVisible &&
+      window.scrollTo({
+        top: 0,
+        behavior: "auto",
+      });
   };
 
   return (
     <footer className="w-full h-fit bg-secondBody pt-10 px-6 pb-6 sticky bottom-0 z-0">
       <div className="flex flex-col items-center gap-6">
         <div className="p-2 rounded-full bg-primary">
-          <Link href="/#top" onClick={scrollToTop} aria-label="Back to top">
+          <Link href="/" aria-label="Back to top" onClick={scrollToTop}>
             <IconArrow width="20px" height="20px" fill="white" />
           </Link>
         </div>
@@ -42,7 +44,7 @@ export default function Footer() {
           ))}
         </div>
       </div>
-      <div className="flex justify-center mt-14">
+      <div className="flex justify-center mt-16 border-t-[1px] border-gray-500 pt-20">
         <IconLogoWhite width={1280} height={214} />
       </div>
     </footer>
