@@ -801,7 +801,8 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    avatar: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    avatar: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.Required;
     posts: Attribute.Relation<
       'api::author.author',
       'oneToMany',
@@ -839,9 +840,6 @@ export interface ApiPostPost extends Schema.CollectionType {
   attributes: {
     title: Attribute.Text;
     content: Attribute.Blocks;
-    picture: Attribute.Media<'images' | 'videos' | 'audios' | 'files'> &
-      Attribute.Required &
-      Attribute.Private;
     slug: Attribute.UID<'api::post.post', 'title'>;
     author: Attribute.Relation<
       'api::post.post',
@@ -849,6 +847,8 @@ export interface ApiPostPost extends Schema.CollectionType {
       'api::author.author'
     >;
     description: Attribute.Text;
+    cover: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

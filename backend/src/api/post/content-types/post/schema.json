@@ -18,18 +18,6 @@
     "content": {
       "type": "blocks"
     },
-    "picture": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "private": true,
-      "allowedTypes": [
-        "images",
-        "videos",
-        "audios",
-        "files"
-      ]
-    },
     "slug": {
       "type": "uid",
       "targetField": "title"
@@ -42,6 +30,17 @@
     },
     "description": {
       "type": "text"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

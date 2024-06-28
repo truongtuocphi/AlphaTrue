@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface PostAttributes {
+  content: any;
   id: number;
   title: string;
   createdAt: string;
@@ -62,9 +64,32 @@ const PageBlog = () => {
     (maxDate, currentDate) => (currentDate > maxDate ? currentDate : maxDate),
     dates[0]
   );
+
+  const getImage = (contents: any) => {
+    const imageItem = contents.find((item: any) => item.type === "image");
+
+    if (imageItem) {
+      return (
+        <Image
+          className="w-full object-cover"
+          key={0}
+          src={imageItem.image.url}
+          alt={imageItem.image.url || ""}
+          width={imageItem.image.width}
+          height={imageItem.image.height}
+          priority={true}
+          style={{ color: "transparent" }}
+        />
+      );
+    }
+
+    return null;
+  };
+
   console.log(DataPosts);
+
   return (
-    <div className="w-full h-svh">
+    <div className="w-full pb-10">
       <div className="my-10">
         <h1 className="text-3xl">Our BLog</h1>
       </div>
@@ -73,11 +98,27 @@ const PageBlog = () => {
           {DataPosts.map(
             (item, index) =>
               formatDate(item.createdAt) === latestDate && (
-                <div key={index}>
-                  <div>
-                    <span>{formatDate(item.createdAt)}</span>
-                    <h1 key={index}>{item.title}</h1>
-                    <p>{item.description}</p>
+                <div
+                  key={index}
+                  className="grid grid-rows-1 gap-5 md:grid-cols-6 md:gap-10"
+                >
+                  <div className="max-w-full h-full overflow-hidden rounded-lg col-span-3">
+                    {getImage(item.content)}
+                  </div>
+                  <div className="col-span-3 flex flex-col gap-6">
+                    <span className="text-base text-gray-600">
+                      {formatDate(item.createdAt)}
+                    </span>
+                    <h1 className="text-4xl font-semibold" key={index}>
+                      {item.title}
+                    </h1>
+                    <p className="w-3/4 text-gray-700">{item.description}</p>
+                    <Link
+                      className="w-fit px-5 py-3 border-primary border-2 rounded-lg font-bold text-primary hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50"
+                      href={`blog/${index + 1}`}
+                    >
+                      Read more
+                    </Link>
                   </div>
                 </div>
               )
