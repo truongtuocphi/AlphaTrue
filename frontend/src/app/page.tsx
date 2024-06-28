@@ -39,7 +39,7 @@ export default function Home() {
     async function fetchData() {
       try {
         const response = await fetch(
-          "https://majestic-passion-7a0f93529a.strapiapp.com//api/posts/"
+          "https://majestic-passion-7a0f93529a.strapiapp.com/api/posts/"
         );
         const data = await response.json();
 
