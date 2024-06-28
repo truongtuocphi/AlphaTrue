@@ -19,7 +19,7 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
     async function fetchData() {
       try {
         const response = await fetch(
-          `http://localhost:1337/api/posts/${params.id}`
+          `https://majestic-passion-7a0f93529a.strapiapp.com/api/posts/${params.id}`
         );
         const data = await response.json();
         setDataPost(data.data.attributes);

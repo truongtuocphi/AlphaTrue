@@ -38,7 +38,9 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("http://localhost:1337/api/posts/");
+        const response = await fetch(
+          "https://majestic-passion-7a0f93529a.strapiapp.com//api/posts/"
+        );
         const data = await response.json();
 
         setDataPosts(data?.data?.map((item: any) => item.attributes) || []);
