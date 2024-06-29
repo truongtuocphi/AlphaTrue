@@ -420,6 +420,7 @@ export interface ApiPostPost extends Schema.CollectionType {
       'api::author.author'
     >;
     description: Attribute.Text;
+    banner: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
