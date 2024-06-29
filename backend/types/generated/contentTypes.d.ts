@@ -375,8 +375,7 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    avatar: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Attribute.Required;
+    avatar: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     posts: Attribute.Relation<
       'api::author.author',
       'oneToMany',
@@ -421,8 +420,6 @@ export interface ApiPostPost extends Schema.CollectionType {
       'api::author.author'
     >;
     description: Attribute.Text;
-    cover: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
-      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
