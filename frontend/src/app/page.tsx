@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import IconLogo from "@/components/icons/IconLogo";
+import { getPosts } from "@/config/api.config";
 import { useEffect, useState } from "react";
 
 interface PostAttributes {
@@ -38,11 +39,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(
-          "https://majestic-passion-7a0f93529a.strapiapp.com/api/posts/"
-        );
-        const data = await response.json();
-
+        const data = await getPosts();
         setDataPosts(data?.data?.map((item: any) => item.attributes) || []);
       } catch (error) {
         console.error("Error fetching data:", error);
