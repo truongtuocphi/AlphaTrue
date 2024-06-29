@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { getPostById, getPosts } from "@/config/api.config";
+import { formatDate } from "@/utils/dateUtils";
 import { useEffect, useState } from "react";
 
 interface PostAttributes {
@@ -18,10 +20,7 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(
-          `https://majestic-passion-7a0f93529a.strapiapp.com/api/posts/${params.id}`
-        );
-        const data = await response.json();
+        const data = await getPostById(params.id);
         setDataPost(data.data.attributes);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -36,8 +35,7 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("http://localhost:1337/api/posts/");
-        const data = await response.json();
+        const data = await getPosts();
 
         setDataPosts(data?.data?.map((item: any) => item.attributes) || []);
       } catch (error) {
@@ -127,15 +125,6 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
 
   if (isLoading) return <p>Loading...</p>;
   if (!DataPost) return <p>No profile data</p>;
-
-  const formatDate = (isoDate: string): string => {
-    const dateObj = new Date(isoDate);
-    const year = dateObj.getFullYear();
-    const month = (dateObj.getMonth() + 1).toString().padStart(2, "0");
-    const day = dateObj.getDate().toString().padStart(2, "0");
-
-    return `${day}/${month}/${year}`;
-  };
 
   return (
     <div className="max-w-4xl mx-auto px-5 pt-10 pb-12 lg:px-10 lg:pt-20 lg:pb-32">

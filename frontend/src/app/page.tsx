@@ -3,6 +3,7 @@
 import Link from "next/link";
 import IconLogo from "@/components/icons/IconLogo";
 import { getPosts } from "@/config/api.config";
+import { formatDate } from "@/utils/dateUtils";
 import { useEffect, useState } from "react";
 
 interface PostAttributes {
@@ -63,16 +64,6 @@ export default function Home() {
         <p className="text-3xl">No profile data</p>;
       </div>
     );
-
-  // Function to format date
-  const formatDate = (isoDate: string): string => {
-    const dateObj = new Date(isoDate);
-    const year = dateObj.getFullYear();
-    const month = (dateObj.getMonth() + 1).toString().padStart(2, "0");
-    const day = dateObj.getDate().toString().padStart(2, "0");
-
-    return `${day}-${month}-${year}`;
-  };
 
   return (
     <div>
