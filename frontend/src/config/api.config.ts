@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:1337/api";
+const BASE_URL = "https://alphatrue.onrender.com/api";
 
 export const getPosts = async () => {
   try {
