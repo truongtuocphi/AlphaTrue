@@ -105,7 +105,9 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
           );
         case "heading":
           const HeaddingTag: any = `h${block.level}`;
-          return <HeaddingTag key={index}>{block.children.text}</HeaddingTag>;
+          return (
+            <HeaddingTag key={index}>{block.children[0].text}</HeaddingTag>
+          );
         case "list":
           const blockList = block.children;
           return (
