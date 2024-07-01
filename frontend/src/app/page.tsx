@@ -146,7 +146,7 @@ export default function Home() {
       <div className="w-full px-7 py-16 lg:px-24 lg:py-40">
         <div className="flex flex-col gap-9 sm:gap-14">
           <h3 className="font-semibold">NEWS & ANNOUNCEMENTS</h3>
-          {DataPosts.map((post, index) => (
+          {DataPosts.map((post: any, index: number) => (
             <a href={`/blog/${index + 1}`} key={index}>
               <div className="flex flex-col items-start gap-3 sm:gap-14 sm:flex-row sm:items-center">
                 <div className="text-xs font-semibold text-gray-500">
