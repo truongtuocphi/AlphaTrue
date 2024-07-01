@@ -37,7 +37,7 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
       try {
         const data = await getPosts();
 
-        setDataPosts(data?.data?.map((item: any) => item.attributes) || []);
+        setDataPosts(data.data.map((item: any) => item.attributes) || []);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -125,8 +125,18 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
     });
   };
 
-  if (isLoading) return <p>Loading...</p>;
-  if (!DataPost) return <p>No profile data</p>;
+  if (isLoading)
+    return (
+      <div className="w-full h-svh flex justify-center">
+        <p className="text-3xl">Loading...</p>
+      </div>
+    );
+  if (!DataPosts)
+    return (
+      <div className="w-full h-svh flex justify-center">
+        <p className="text-3xl">No profile data</p>;
+      </div>
+    );
 
   return (
     <div className="max-w-4xl mx-auto px-5 pt-10 pb-12 lg:px-10 lg:pt-20 lg:pb-32">
