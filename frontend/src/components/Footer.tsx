@@ -15,20 +15,11 @@ const listItemFooter = [
 ];
 
 export default function Footer() {
-  const [isVisible, setIsVisible] = useState(false);
-  const scrollToTop = () => {
-    isVisible &&
-      window.scrollTo({
-        top: 0,
-        behavior: "auto",
-      });
-  };
-
   return (
     <footer className="w-full h-fit bg-secondBody pt-10 px-6 pb-6 sticky bottom-0 z-0">
       <div className="flex flex-col items-center gap-6">
         <div className="p-2 rounded-full bg-primary">
-          <Link href="/" aria-label="Back to top" onClick={scrollToTop}>
+          <Link href="/#top" aria-label="Back to top">
             <IconArrow width="20px" height="20px" fill="white" />
           </Link>
         </div>
