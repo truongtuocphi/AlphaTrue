@@ -139,33 +139,38 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
     );
 
   return (
-    <div className="max-w-4xl mx-auto px-5 pt-10 pb-12 lg:px-10 lg:pt-20 lg:pb-32">
-      <div className="flex flex-col gap-3 mb-4">
-        <h1 className="text-2xl lg:text-4xl">{DataPost.title}</h1>
-        <div className="text-sm text-gray-600 mb-12">
-          <div>Date Submitted: {formatDate(DataPost.createdAt)}</div>
-          <div>Edit date: {formatDate(DataPost.updatedAt)}</div>
+    DataPost && (
+      <div className="max-w-4xl mx-auto px-5 pt-10 pb-12 lg:px-10 lg:pt-20 lg:pb-32">
+        <div className="flex flex-col gap-3 mb-4">
+          <h1 className="text-2xl lg:text-4xl">{DataPost.title}</h1>
+          <div className="text-sm text-gray-600 mb-12">
+            <div>Date Submitted: {formatDate(DataPost.createdAt)}</div>
+            <div>Edit date: {formatDate(DataPost.updatedAt)}</div>
+          </div>
+        </div>
+        <div className="border-t-2 py-8 border-b-2">
+          {renderContent(DataPost.content)}
+        </div>
+        <div className="w-full pt-6">
+          <div className="flex flex-col gap-14">
+            <h1 className="font-semibold">NEWS & ANNOUNCEMENTS</h1>
+            {DataPosts &&
+              DataPosts.map((post, index) => (
+                <a href={`/blog/${index + 1}`} key={index}>
+                  <div className="flex items-center gap-14">
+                    <div className="text-xs font-semibold text-gray-500">
+                      {formatDate(post.createdAt)}
+                    </div>
+                    <h2 className="text-xl lg:text-2xl font-thin">
+                      {post.title}
+                    </h2>
+                  </div>
+                </a>
+              ))}
+          </div>
         </div>
       </div>
-      <div className="border-t-2 py-8 border-b-2">
-        {renderContent(DataPost.content)}
-      </div>
-      <div className="w-full pt-6">
-        <div className="flex flex-col gap-14">
-          <h1 className="font-semibold">NEWS & ANNOUNCEMENTS</h1>
-          {DataPosts.map((post, index) => (
-            <a href={`/blog/${index + 1}`} key={index}>
-              <div className="flex items-center gap-14">
-                <div className="text-xs font-semibold text-gray-500">
-                  {formatDate(post.createdAt)}
-                </div>
-                <h2 className="text-xl lg:text-2xl font-thin">{post.title}</h2>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </div>
+    )
   );
 };
 

@@ -1,4 +1,6 @@
-const BASE_URL = "https://alphatrue.onrender.com/api";
+import envConfig from "@/app/config";
+
+const BASE_URL = `${envConfig.NEXT_PUBLIC_API_ENDPOINT}`;
 
 export const getPosts = async () => {
   try {
