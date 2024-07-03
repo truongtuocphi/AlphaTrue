@@ -1,16 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import IconLogo from "@/components/icons/IconLogo";
 import { getPosts } from "@/config/api.config";
 import { formatDate } from "@/utils/dateUtils";
-import { useEffect, useState } from "react";
-
-interface PostAttributes {
-  id: number;
-  title: string;
-  createdAt: string;
-}
 
 const listCards = [
   {
@@ -33,38 +24,9 @@ const listCards = [
   },
 ];
 
-export default function Home() {
-  const [DataPosts, setDataPosts] = useState<PostAttributes[]>([]);
-  const [isLoading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const data = await getPosts();
-        setDataPosts(data?.data?.map((item: any) => item.attributes) || []);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchData();
-  }, []);
-
-  if (isLoading)
-    return (
-      <div className="w-full h-svh flex justify-center">
-        <p className="text-3xl">Loading...</p>
-      </div>
-    );
-  if (!DataPosts)
-    return (
-      <div className="w-full h-svh flex justify-center">
-        <p className="text-3xl">No profile data</p>;
-      </div>
-    );
-
+export default async function Home() {
+  const payload = await getPosts();
+  const postList = payload.data;
   return (
     <div>
       <div className="mt-20 h-96">
@@ -146,13 +108,15 @@ export default function Home() {
       <div className="w-full px-7 py-16 lg:px-24 lg:py-40">
         <div className="flex flex-col gap-9 sm:gap-14">
           <h3 className="font-semibold">NEWS & ANNOUNCEMENTS</h3>
-          {DataPosts.map((post: any, index: number) => (
+          {postList.map(({ attributes }: any, index: number) => (
             <a href={`/blog/${index + 1}`} key={index}>
               <div className="flex flex-col items-start gap-3 sm:gap-14 sm:flex-row sm:items-center">
                 <div className="text-xs font-semibold text-gray-500">
-                  {formatDate(post.createdAt)}
+                  {formatDate(attributes.createdAt)}
                 </div>
-                <h2 className="text-xl lg:text-2xl font-thin">{post.title}</h2>
+                <h2 className="text-xl lg:text-2xl font-thin">
+                  {attributes.title}
+                </h2>
               </div>
             </a>
           ))}
