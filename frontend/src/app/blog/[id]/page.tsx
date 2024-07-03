@@ -1,7 +1,9 @@
 "use client";
-
+import {
+  BlocksRenderer,
+  type BlocksContent,
+} from "@strapi/blocks-react-renderer";
 import Image from "next/image";
-import Link from "next/link";
 import { getPostById, getPosts } from "@/config/api.config";
 import { formatDate } from "@/utils/dateUtils";
 import { useEffect, useState } from "react";
@@ -20,8 +22,8 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await getPostById(params.id);
-        setDataPost(data.data.attributes);
+        const contentPost = await getPostById(params.id);
+        setDataPost(contentPost.data.attributes);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -48,83 +50,8 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
     fetchData();
   }, []);
 
-  const renderText = (item: any, index: any) => {
-    let textElement = <span key={index}>{item.text}</span>;
-
-    if (item.bold) textElement = <strong key={index}>{textElement}</strong>;
-    if (item.italic) textElement = <em key={index}>{textElement}</em>;
-    if (item.underline) textElement = <u key={index}>{textElement}</u>;
-    if (item.strikethrough) textElement = <s key={index}>{textElement}</s>;
-
-    return textElement;
-  };
-
-  const renderLink = (item: any, index: number) => (
-    <Link
-      href={item.url}
-      key={index}
-      style={{ color: "blue", textDecoration: "underline" }}
-      target="_blank"
-    >
-      {item.children[0].text}
-    </Link>
-  );
-
-  const breakLine = (item: any, index: number) => {
-    return item.text === "" && <br key={index} />;
-  };
-
-  const renderContent = (content: any) => {
-    return content.map((block: any, index: number) => {
-      switch (block.type) {
-        case "paragraph":
-          return (
-            <p key={index} className="my-3">
-              {block.children.map((item: any, childIndex: number) =>
-                item.type === "link"
-                  ? renderLink(item, childIndex)
-                  : item.text === ""
-                  ? breakLine(item, childIndex)
-                  : renderText(item, childIndex)
-              )}
-            </p>
-          );
-        case "image":
-          return (
-            <div key={index} className="my-2">
-              <Image
-                className="w-full"
-                src={block.image.url}
-                alt={block.image.url || ""}
-                width={block.image.width}
-                height={block.image.height}
-                priority={true}
-                style={{ color: "transparent" }}
-              />
-            </div>
-          );
-        case "heading":
-          const HeaddingTag: any = `h${block.level}`;
-          return (
-            <HeaddingTag key={index}>{block.children[0].text}</HeaddingTag>
-          );
-        case "list":
-          const blockList = block.children;
-          return (
-            <ul className="list-inside ml-4">
-              {blockList.map((item: any, index: number) => (
-                <li key={index} style={{ listStyle: "circle" }}>
-                  {item.children[0].text}
-                </li>
-              ))}
-            </ul>
-          );
-        default:
-          return null;
-      }
-    });
-  };
-
+  const content: BlocksContent = DataPost?.content;
+  console.log(content);
   if (isLoading)
     return (
       <div className="w-full h-svh flex justify-center">
@@ -149,7 +76,22 @@ const BlogDeltail = ({ params }: { params: { id: string } }) => {
           </div>
         </div>
         <div className="border-t-2 py-8 border-b-2">
-          {renderContent(DataPost.content)}
+          <BlocksRenderer
+            content={content}
+            blocks={{
+              image: ({ image }) => {
+                return (
+                  <Image
+                    className="my-2"
+                    src={image.url}
+                    alt={image.name}
+                    width={image.width}
+                    height={image.height}
+                  />
+                );
+              },
+            }}
+          />
         </div>
         <div className="w-full pt-6">
           <div className="flex flex-col gap-14">
