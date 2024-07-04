@@ -5,6 +5,7 @@ import {
 import Image from "next/image";
 import { getPostById, getPosts } from "@/config/api.config";
 import { formatDate } from "@/utils/dateUtils";
+import BlockRendererClient from "@/app/blog/_components/BlockRendererClient";
 
 export default async function BlogDeltail({
   params,
@@ -30,12 +31,13 @@ export default async function BlogDeltail({
             <div>Edit date: {formatDate(dataPost.attributes.updatedAt)}</div>
           </div>
         </div>
-        {/* <div className="border-t-2 py-8 border-b-2">
-          <BlocksRenderer
+        <div className="border-t-2 py-8 border-b-2">
+          {/* <BlocksRenderer
             content={content}
             blocks={{
               image: async ({ image }) => {
                 "use server";
+                console.log(image);
                 return (
                   <Image
                     className="my-2"
@@ -47,8 +49,9 @@ export default async function BlogDeltail({
                 );
               },
             }}
-          />
-        </div> */}
+          /> */}
+          <BlockRendererClient content={content} />
+        </div>
         <div className="w-full pt-6">
           <div className="flex flex-col gap-14">
             <h1 className="font-semibold">NEWS & ANNOUNCEMENTS</h1>
