@@ -19,10 +19,10 @@ const fetchFromAPI = async (endpoint: string) => {
   }
 };
 
-export const getPosts = async () => {
-  return await fetchFromAPI("posts");
+export const getData = async (url: string) => {
+  return await fetchFromAPI(url);
 };
 
-export const getPostById = async (id: string) => {
-  return await fetchFromAPI(`posts/${id}`);
+export const getDataById = async (url: string, id: string) => {
+  return await fetchFromAPI(`${url}/${id}`);
 };

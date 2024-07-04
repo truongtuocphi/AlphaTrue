@@ -1,6 +1,6 @@
 import Link from "next/link";
 import IconLogo from "@/components/icons/IconLogo";
-import { getPosts } from "@/config/api.config";
+import { getData } from "@/config/api.config";
 import { formatDate } from "@/utils/dateUtils";
 
 const listCards = [
@@ -25,7 +25,7 @@ const listCards = [
 ];
 
 export default async function Home() {
-  const payload = await getPosts();
+  const payload = await getData("posts");
   const postList = payload.data;
   return (
     <div>
