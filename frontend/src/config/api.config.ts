@@ -1,6 +1,6 @@
 import envConfig from "app/config";
 
-const BASE_URL = `${envConfig.NEXT_PUBLIC_API_ENDPOINT}`;
+const BASE_URL = envConfig.NEXT_PUBLIC_API_ENDPOINT;
 
 const fetchFromAPI = async (endpoint: string) => {
   try {
