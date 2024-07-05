@@ -2,31 +2,12 @@ import Link from "next/link";
 import IconLogo from "@/components/icons/IconLogo";
 import { getData } from "@/config/api.config";
 import { formatDate } from "@/utils/dateUtils";
-
-const listCards = [
-  {
-    title: "ADVISE",
-    name: "Spartan Advisory",
-    describe:
-      "The industry’s most active and innovative Web3 advisory firm, specialising in M&A, restructuring and capital raises.",
-  },
-  {
-    title: "INVEST",
-    name: "Spartan Capital",
-    describe:
-      "The industry’s most active and innovative Web3 advisory firm, specialising in M&A, restructuring and capital raises.",
-  },
-  {
-    title: "BUILD",
-    name: "Spartan Labs",
-    describe:
-      "The industry’s most active and innovative Web3 advisory firm, specialising in M&A, restructuring and capital raises.",
-  },
-];
+import { listCards } from "@/lib/data";
 
 export default async function Home() {
   const payload = await getData("posts");
   const postList = payload.data;
+
   return (
     <div>
       <div className="mt-20 h-96">
@@ -109,7 +90,7 @@ export default async function Home() {
         <div className="flex flex-col gap-9 sm:gap-14">
           <h3 className="font-semibold">NEWS & ANNOUNCEMENTS</h3>
           {postList.map(({ attributes }: any, index: number) => (
-            <a href={`/blog/${index + 1}`} key={index}>
+            <Link href={`/blog/${index + 1}`} key={index}>
               <div className="flex flex-col items-start gap-3 sm:gap-14 sm:flex-row sm:items-center">
                 <div className="text-xs font-semibold text-gray-500">
                   {formatDate(attributes.createdAt)}
@@ -118,7 +99,7 @@ export default async function Home() {
                   {attributes.title}
                 </h2>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

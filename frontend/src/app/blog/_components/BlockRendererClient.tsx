@@ -19,7 +19,7 @@ export default function BlockRendererClient({
         image: async ({ image }) => {
           return (
             <Image
-              className="my-2"
+              className="my-2 w-full"
               src={image.url}
               alt={image.name}
               width={image.width}
