@@ -18,3 +18,12 @@ export const listCards = [
       "The industry’s most active and innovative Web3 advisory firm, specialising in M&A, restructuring and capital raises.",
   },
 ];
+
+export const links = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Team", href: "/team" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Moments", href: "/moments" },
+  { label: "Blog", href: "/blog" },
+];

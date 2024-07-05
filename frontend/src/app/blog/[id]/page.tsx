@@ -8,9 +8,9 @@ export default async function BlogDeltail({
 }: {
   params: { id: string };
 }) {
-  const getIdPost = params.id;
+  const idPost = params.id;
 
-  const payload = await getDataById("posts", getIdPost);
+  const payload = await getDataById("posts", idPost);
   const dataPost = payload.data;
 
   const contentPost: BlocksContent = dataPost?.attributes?.content;

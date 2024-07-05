@@ -6,6 +6,7 @@ import logo from "@/public/logo.webp";
 import Link from "next/link";
 import IconLinkedin from "./icons/IconLinkedin";
 import IconTwitter from "./icons/IconTwitter";
+import { links } from "@/lib/data";
 import {
   Menu,
   MenuButton,
@@ -17,15 +18,6 @@ import {
   Transition,
   TransitionChild,
 } from "@headlessui/react";
-
-const links = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Team", href: "/team" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Moments", href: "/moments" },
-  { label: "Blog", href: "/blog" },
-];
 
 export default function Header() {
   const [activeTitle, setActiveTitle] = useState(true);
