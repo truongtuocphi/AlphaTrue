@@ -32,6 +32,6 @@ export const getDataById = async (url: string, id: string) => {
 export const postData = async (url: string, data: object) => {
   return await fetchFromAPI(url, {
     method: "POST",
-    body: JSON.stringify(data),
+    body: JSON.stringify({ data }),
   });
 };
