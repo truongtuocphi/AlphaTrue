@@ -3,7 +3,7 @@ import IconLogo from "@/components/icons/IconLogo";
 import { getData } from "@/config/api.config";
 import { formatDate } from "@/utils/dateUtils";
 import { listCards } from "@/lib/data";
-import ContactForm from "@/components/ContactForm";
+// import ContactForm from "@/components/ContactForm";
 
 export default async function Home() {
   const payload = await getData("posts");
