@@ -16,7 +16,7 @@ export default function BlockRendererClient({
     <BlocksRenderer
       content={content}
       blocks={{
-        image: async ({ image }) => {
+        image: ({ image }) => {
           return (
             <Image
               className="my-2 w-full"
