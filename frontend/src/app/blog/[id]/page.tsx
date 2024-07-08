@@ -9,7 +9,6 @@ export default async function BlogDeltail({
   params: { id: string };
 }) {
   const idPost = params.id;
-
   const payload = await getDataById("posts", idPost);
   const dataPost = payload.data;
 

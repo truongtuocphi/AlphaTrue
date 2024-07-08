@@ -2,12 +2,13 @@ import envConfig from "app/config";
 
 const BASE_URL = envConfig.NEXT_PUBLIC_API_ENDPOINT;
 
-const fetchFromAPI = async (endpoint: string) => {
+const fetchFromAPI = async (endpoint: string, option = {}) => {
   try {
     const response = await fetch(`${BASE_URL}/${endpoint}`, {
       headers: {
         "Content-Type": "application/json",
       },
+      ...option,
     });
     if (!response.ok) {
       // throw new Error(`HTTP error! status: ${response.status}`);
@@ -26,4 +27,11 @@ export const getData = async (url: string) => {
 
 export const getDataById = async (url: string, id: string) => {
   return await fetchFromAPI(`${url}/${id}`);
+};
+
+export const postData = async (url: string, data: object) => {
+  return await fetchFromAPI(url, {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
 };
