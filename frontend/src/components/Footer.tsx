@@ -1,18 +1,7 @@
-"use client";
-
-import React, { useState } from "react";
 import Link from "next/link";
 import IconLogoWhite from "./icons/IconLogoWhite";
 import IconArrow from "./icons/IconArrow";
-
-const listItemFooter = [
-  { name: "TWITTER", slug: "https://twitter.com/AlphaTrueAPT" },
-  { name: "LINKEDIN", slug: "https://www.linkedin.com/company/alphatrue" },
-  { name: "TEAM", slug: "/team" },
-  { name: "ABOUT US", slug: "/about" },
-  { name: "MOMENTS", slug: "/moments" },
-  { name: "Copyright © 2021 AlphaTrue", slug: "/#" },
-];
+import { listItemFooter } from "@/lib/data";
 
 export default function Footer() {
   return (

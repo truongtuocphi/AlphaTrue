@@ -27,3 +27,12 @@ export const links = [
   { label: "Moments", href: "/moments" },
   { label: "Blog", href: "/blog" },
 ];
+
+export const listItemFooter = [
+  { name: "TWITTER", slug: "https://twitter.com/AlphaTrueAPT" },
+  { name: "LINKEDIN", slug: "https://www.linkedin.com/company/alphatrue" },
+  { name: "TEAM", slug: "/team" },
+  { name: "ABOUT US", slug: "/about" },
+  { name: "MOMENTS", slug: "/moments" },
+  { name: "Copyright © 2021 AlphaTrue", slug: "/#" },
+];
