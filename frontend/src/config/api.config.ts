@@ -31,10 +31,6 @@ export const getData = async (url: string) => {
   return await fetchFromAPI(url);
 };
 
-export const getDataById = async (url: string, id: string) => {
-  return await fetchFromAPI(`${url}/${id}`);
-};
-
 export const postData = async (url: string, data: object) => {
   return await fetchFromAPI(url, {
     method: "POST",
