@@ -1,5 +1,3 @@
-import * as React from "react";
-
 interface IconTwitterProps extends React.SVGProps<SVGSVGElement> {
   width?: string | number;
   height?: string | number;

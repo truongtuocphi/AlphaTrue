@@ -1,5 +1,3 @@
-import React from "react";
-
 interface IconArrowProps {
   width?: number | string;
   height?: number | string;

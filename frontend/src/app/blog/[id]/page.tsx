@@ -1,5 +1,5 @@
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
-import { getDataById } from "@/config/api.config";
+import { getDataById, getData } from "@/config/api.config";
 import { formatDate } from "@/utils/dateUtils";
 import BlockRendererClient from "@/app/blog/_components/BlockRendererClient";
 
@@ -9,7 +9,8 @@ export default async function BlogDeltail({
   params: { id: string };
 }) {
   const idPost = params.id;
-  const payload = await getDataById("posts", idPost);
+  const payload = await getData(`posts/${idPost}`);
+  // const payload = await getDataById("posts", idPost);
   const dataPost = payload.data;
 
   const contentPost: BlocksContent = dataPost?.attributes?.content;
