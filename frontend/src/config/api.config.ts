@@ -1,6 +1,7 @@
 import envConfig from "app/config";
 
 const BASE_URL = envConfig.NEXT_PUBLIC_API_ENDPOINT;
+const API_KEY = envConfig.NEXT_PUBLIC_API_TOKEN;
 
 interface FetchOptions extends RequestInit {
   body?: string;
@@ -10,6 +11,7 @@ const fetchFromAPI = async (endpoint: string, option: FetchOptions = {}) => {
   try {
     const response = await fetch(`${BASE_URL}/${endpoint}`, {
       headers: {
+        Authorzization: `Bearer ${API_KEY}`,
         "Content-Type": "application/json",
       },
       ...option,

@@ -91,7 +91,7 @@ export default async function Home() {
         <div className="flex flex-col gap-9 sm:gap-14">
           <h3 className="font-semibold">NEWS & ANNOUNCEMENTS</h3>
           {postList.map(({ attributes }: any, index: number) => (
-            <Link href={`/blog/${index + 1}`} key={index}>
+            <Link href={`/blog/${attributes.slug}`} key={index}>
               <div className="flex flex-col items-start gap-3 sm:gap-14 sm:flex-row sm:items-center">
                 <div className="text-xs font-semibold text-gray-500">
                   {formatDate(attributes.createdAt)}

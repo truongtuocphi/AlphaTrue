@@ -1,18 +1,17 @@
 import { type BlocksContent } from "@strapi/blocks-react-renderer";
-import { getDataById, getData } from "@/config/api.config";
+import { getData } from "@/config/api.config";
 import { formatDate } from "@/utils/dateUtils";
 import BlockRendererClient from "@/app/blog/_components/BlockRendererClient";
 
 export default async function BlogDeltail({
   params,
 }: {
-  params: { id: string };
+  params: { slug: string };
 }) {
-  const idPost = params.id;
-  const payload = await getData(`posts/${idPost}`);
-  // const payload = await getDataById("posts", idPost);
-  const dataPost = payload.data;
+  const slugPost = params.slug;
+  const payload = await getData(`posts?filters[slug][$eq]=${slugPost}`);
 
+  const dataPost = payload.data[0];
   const contentPost: BlocksContent = dataPost?.attributes?.content;
 
   return (
@@ -22,13 +21,13 @@ export default async function BlogDeltail({
         <div className="max-w-4xl mx-auto px-5 pt-10 pb-12 lg:px-10 lg:pt-20 lg:pb-32">
           <div className="flex flex-col gap-3 mb-4">
             <h1 className="text-2xl lg:text-4xl">
-              {dataPost.attributes.title}
+              {dataPost.attributes?.title}
             </h1>
             <div className="text-sm text-gray-600 mb-12">
               <div>
-                Date Submitted: {formatDate(dataPost.attributes.createdAt)}
+                Date Submitted: {formatDate(dataPost.attributes?.createdAt)}
               </div>
-              <div>Edit date: {formatDate(dataPost.attributes.updatedAt)}</div>
+              <div>Edit date: {formatDate(dataPost.attributes?.updatedAt)}</div>
             </div>
           </div>
           <div className="border-t-2 py-8 border-b-2">
