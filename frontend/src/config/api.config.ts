@@ -17,8 +17,8 @@ const fetchFromAPI = async (endpoint: string, option: FetchOptions = {}) => {
       ...option,
     });
     if (!response.ok) {
-      // throw new Error(`HTTP error! status: ${response.status}`);
-      console.log(`HTTP error! status: ${response.status}`);
+      throw new Error(`HTTP error! status: ${response.status}`);
+      // console.log(`HTTP error! status: ${response.status}`);
     }
     return await response.json();
   } catch (error) {
@@ -28,7 +28,9 @@ const fetchFromAPI = async (endpoint: string, option: FetchOptions = {}) => {
 };
 
 export const getData = async (url: string) => {
-  return await fetchFromAPI(url);
+  return await fetchFromAPI(url, {
+    method: "GET",
+  });
 };
 
 export const postData = async (url: string, data: object) => {
