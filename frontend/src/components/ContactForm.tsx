@@ -2,7 +2,6 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -21,7 +20,6 @@ import {
 import { postData } from "@/config/api.config";
 
 const ContactForm = () => {
-  // Define your form.
   const form = useForm<ContactBodyType>({
     resolver: zodResolver(ContactBody),
     defaultValues: {
@@ -32,7 +30,6 @@ const ContactForm = () => {
   });
 
   function onSubmit(values: ContactBodyType) {
-    console.log(values);
     postData("contacts", values);
     values && form.reset();
   }
