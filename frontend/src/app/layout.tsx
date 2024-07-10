@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import NextTopLoader from "nextjs-toploader";
 import { Be_Vietnam_Pro } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
 import "./globals.css";
 
 const be_Vietnam_Pro = Be_Vietnam_Pro({ subsets: ["latin"], weight: ["300"] });
@@ -20,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={(be_Vietnam_Pro.className, "bg-body")}>
-        <NextTopLoader showSpinner={false} />
+        <NextTopLoader showSpinner={false} color="#00B6DD" />
         <main className="bg-secondBody">
           <div className="w-full h-fit bg-body rounded-b-3xl relative z-10">
             <Header />
