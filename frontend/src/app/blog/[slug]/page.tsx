@@ -18,7 +18,9 @@ export default async function BlogDeltail({
 
   return (
     <>
-      {!dataPost && <div>This page could not be found.</div>}
+      {!dataPost && (
+        <h1 className="text-center">This page could not be found</h1>
+      )}
       {dataPost && (
         <div className="max-w-4xl mx-auto px-5 pt-10 pb-12 lg:px-10 lg:pt-20 lg:pb-32">
           <div className="flex flex-col gap-3 mb-4">
