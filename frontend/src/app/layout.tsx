@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import NextTopLoader from "nextjs-toploader";
 import { Be_Vietnam_Pro } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={(be_Vietnam_Pro.className, "bg-body")}>
+        <NextTopLoader showSpinner={false} />
         <main className="bg-secondBody">
           <div className="w-full h-fit bg-body rounded-b-3xl relative z-10">
             <Header />
