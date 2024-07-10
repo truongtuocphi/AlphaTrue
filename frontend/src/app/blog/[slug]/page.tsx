@@ -35,7 +35,7 @@ export default async function BlogDeltail({
             </div>
           </div>
           <div className="border-t-2 py-8 border-b-2">
-            <BlockRendererClient content={contentPost} />
+            {contentPost && <BlockRendererClient content={contentPost} />}
           </div>
         </div>
       )}
