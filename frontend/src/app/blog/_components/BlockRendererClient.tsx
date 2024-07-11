@@ -18,13 +18,18 @@ export default function BlockRendererClient({
       blocks={{
         image: ({ image }) => {
           return (
-            <Image
-              className="my-2 w-full"
-              src={image.url}
-              alt={image.name}
-              width={image.width}
-              height={image.height}
-            />
+            <div className="my-2">
+              <Image
+                className="w-full"
+                src={image.url}
+                alt={image.name}
+                width={image.width}
+                height={image.height}
+              />
+              <figcaption className="mt-2 text-sm text-gray-600">
+                {image.caption}
+              </figcaption>
+            </div>
           );
         },
       }}

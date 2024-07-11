@@ -11,11 +11,13 @@ export default async function BlogDeltail({
   const slugPost = params.slug;
   // Build your query URL with Strapi
   // https://docs.strapi.io/dev-docs/api/rest/interactive-query-builder
-  const payload = await getData(`posts?filters[slug][$eq]=${slugPost}`);
+  const payload = await getData(
+    `posts?filters[slug][$eq]=${slugPost}&populate=*`
+  );
 
-  const dataPost = payload?.data[0];
+  const dataPost = payload.data[0];
   const contentPost: BlocksContent = dataPost?.attributes?.content;
-
+  console.log(dataPost?.attributes?.content);
   return (
     <>
       {!dataPost && (
