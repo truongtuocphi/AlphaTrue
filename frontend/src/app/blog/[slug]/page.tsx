@@ -13,7 +13,7 @@ export default async function BlogDeltail({
   // https://docs.strapi.io/dev-docs/api/rest/interactive-query-builder
   const payload = await getData(`posts?filters[slug][$eq]=${slugPost}`);
 
-  const dataPost = payload.data[0];
+  const dataPost = payload?.data[0];
   const contentPost: BlocksContent = dataPost?.attributes?.content;
 
   return (
