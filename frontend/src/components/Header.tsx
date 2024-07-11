@@ -42,7 +42,7 @@ export default function Header() {
           src={logo}
           alt="logo"
           priority
-          style={{ width: "150px", height: "auto" }}
+          style={{ width: "170px", height: "auto" }}
         />
       </Link>
       <div className="flex items-center justify-end gap-6 lg:gap-0 lg:items-start">
