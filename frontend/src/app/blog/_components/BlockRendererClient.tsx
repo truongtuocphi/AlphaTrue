@@ -20,7 +20,7 @@ export default function BlockRendererClient({
           return (
             <div className="my-2">
               <Image
-                className="w-full"
+                className="w-full h-auto"
                 src={image.url}
                 alt={image.name}
                 width={image.width}
