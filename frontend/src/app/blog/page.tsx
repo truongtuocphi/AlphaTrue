@@ -1,3 +1,3 @@
 export default function page() {
-  return <div>blog</div>;
+  return <div className="w-full h-svh">blog</div>;
 }
