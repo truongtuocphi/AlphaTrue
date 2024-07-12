@@ -17,7 +17,7 @@ export default async function BlogDeltail({
 
   const dataPost = payload.data[0];
   const contentPost: BlocksContent = dataPost?.attributes?.content;
-  console.log(dataPost?.attributes?.content);
+
   return (
     <>
       {!dataPost && (
