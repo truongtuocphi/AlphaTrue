@@ -12,20 +12,17 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   ContactBodyType,
   ContactBody,
 } from "@/schemaValidations/contact.schama";
 import { postData } from "@/config/api.config";
 
-const ContactForm = () => {
+const ContactInput = () => {
   const form = useForm<ContactBodyType>({
     resolver: zodResolver(ContactBody),
     defaultValues: {
-      name: "",
       email: "",
-      message: "",
     },
   });
 
@@ -38,54 +35,35 @@ const ContactForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8"
+        className="w-full flex gap-2 justify-between"
         noValidate
       >
         <FormField
           control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name</FormLabel>
-              <FormControl>
-                <Input placeholder="shadcn" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
+            <FormItem className="w-full">
               <FormControl>
-                <Input placeholder="shadcn" {...field} type="email" />
+                <Input
+                  className="border-none outline-none shadow-none focus-visible:ring-0"
+                  placeholder="Enter your email address"
+                  {...field}
+                  type="email"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
-              <FormControl>
-                <Textarea placeholder="shadcn" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit" className="text-white">
-          Submit
+        <Button
+          type="submit"
+          className="max-w-24 max-h-9 bg-third-50 text-third-5 text-sm shadow-none"
+        >
+          Get Started
         </Button>
       </form>
     </Form>
   );
 };
 
-export default ContactForm;
+export default ContactInput;

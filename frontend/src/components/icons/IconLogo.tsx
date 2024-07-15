@@ -3,12 +3,12 @@ interface IconLogo extends React.SVGProps<SVGSVGElement> {
   height?: string | number;
 }
 
-const IconLogo: React.FC<IconLogo> = ({ width = "191", height = "45" }) => (
+const IconLogo: React.FC<IconLogo> = ({ width = 192, height = 46 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    width={192}
-    height={46}
+    width={width}
+    height={height}
     fill="none"
   >
     <g clipPath="url(#a)">

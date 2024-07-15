@@ -6,7 +6,7 @@ export default function Navigation() {
   return (
     <div className="flex justify-between items-center px-28 py-10 mb-24">
       <Link href="/">
-        <IconLogo width="130px" height="31px" />
+        <IconLogo />
       </Link>
       <nav>
         <ul className="flex gap-12">
