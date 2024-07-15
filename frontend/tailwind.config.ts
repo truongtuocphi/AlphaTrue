@@ -24,8 +24,10 @@ const config = {
         body: "#FAFAFA",
       },
       colors: {
-        primary: "#006fef",
-        border: "hsl(var(--border))",
+        primary: "#00F3CF",
+        customBlack: "#111212",
+        customGray: "#838585",
+        border: "#303433",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",

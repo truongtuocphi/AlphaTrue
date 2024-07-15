@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Be_Vietnam_Pro } from "next/font/google";
+import localFont from "next/font/local";
 import NextTopLoader from "nextjs-toploader";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 import "./globals.css";
+import Navigation from "@/components/Navigation";
 
-const be_Vietnam_Pro = Be_Vietnam_Pro({ subsets: ["latin"], weight: ["300"] });
+const Mark_Pro = localFont({ src: "./Mark Pro.ttf" });
 
 export const metadata: Metadata = {
   title: "AlphaTrue",
@@ -19,15 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={(be_Vietnam_Pro.className, "bg-body")}>
+    <html lang="en">
+      <body className={Mark_Pro.className}>
         <NextTopLoader showSpinner={false} color="#00B6DD" />
-        <main className="bg-secondBody">
-          <div className="w-full h-fit bg-body rounded-b-3xl relative z-10">
-            <Header />
-            <div className="px-3 lg:px-10">{children}</div>
-          </div>
-          <Footer />
+        <main>
+          <Header />
+          <Navigation />
+          <div className="px-3 lg:px-10">{children}</div>
         </main>
       </body>
     </html>
