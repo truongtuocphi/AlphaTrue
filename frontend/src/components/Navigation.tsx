@@ -13,10 +13,7 @@ export default function Navigation() {
           {links.map(({ href, label }) => {
             return (
               <li key={label}>
-                <Link
-                  href={href}
-                  className="text-customBlack font-bold text-base"
-                >
+                <Link href={href} className="text-black-50 font-bold text-base">
                   {label}
                 </Link>
               </li>

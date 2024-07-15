@@ -27,6 +27,7 @@ export default function RootLayout({
           <Header />
           <Navigation />
           <div className="px-3 lg:px-10">{children}</div>
+          <Footer />
         </main>
       </body>
     </html>
