@@ -21,8 +21,8 @@ export default function SectionCompanyHistory() {
           </p>
         </div>
 
-        <div className="max-w-full h-80">
-          <Image src={Rectangle} alt="Rectangle" className="w-full h-full" />
+        <div className="max-w-full h-80 rounded-2xl overflow-hidden">
+          <Image src={Rectangle} alt="Rectangle" className="w-full h-full " />
         </div>
       </div>
     </section>

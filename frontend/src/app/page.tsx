@@ -1,4 +1,5 @@
 import SectionBanner from "@/components/Home/SectionBanner";
+import SectionCompanyHistory from "@/components/Home/SectionCompanyHistory";
 import { getData } from "@/config/api.config";
 
 export default async function Home() {
@@ -8,6 +9,9 @@ export default async function Home() {
   return (
     <div className="w-full">
       <SectionBanner />
+      <div className="flex justify-center my-52">
+        <SectionCompanyHistory />
+      </div>
     </div>
   );
 }

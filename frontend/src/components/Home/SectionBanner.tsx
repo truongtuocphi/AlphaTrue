@@ -2,13 +2,7 @@ import webAPT1BG from "@/public/images/webAPT1BG 1.png";
 import Image from "next/image";
 import Header from "../Header";
 import IconLogoWhite from "../icons/IconLogoWhite";
-
-const listStatistical = [
-  { number: "20+", name: "PROJECT DONE" },
-  { number: "50K+", name: "TRUSTED PEOPLE" },
-  { number: "100+", name: "HAPPY CLIENTS" },
-  { number: "40+", name: "TEAM MEMBERS" },
-];
+import SectionStatistical from "./SectionStatistical";
 
 export default function SectionBanner() {
   return (
@@ -33,16 +27,7 @@ export default function SectionBanner() {
           </div>
         </div>
       </div>
-      <div className="w-full h-fit flex justify-center items-center gap-24 py-6 bg-black-20">
-        {listStatistical.map(({ number, name }) => {
-          return (
-            <div key={name} className="flex flex-col gap-1 text-center">
-              <h3 className="font-bold text-5xl text-third-50">{number}</h3>
-              <div className="font-bold text-base text-black-100">{name}</div>
-            </div>
-          );
-        })}
-      </div>
+      <SectionStatistical />
     </section>
   );
 }
