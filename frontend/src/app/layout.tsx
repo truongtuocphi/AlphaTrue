@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 import "./globals.css";
-import Navigation from "@/components/Navigation";
 
 const Mark_Pro = localFont({ src: "./Mark Pro.ttf" });
 
@@ -24,10 +23,8 @@ export default function RootLayout({
       <body className={Mark_Pro.className}>
         <NextTopLoader showSpinner={false} color="#00B6DD" />
         <main>
-          <Header />
-          <Navigation />
-          <div className="px-3 lg:px-10">{children}</div>
-          <Footer />
+          <div>{children}</div>
+          {/* <Footer /> */}
         </main>
       </body>
     </html>

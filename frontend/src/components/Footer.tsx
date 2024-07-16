@@ -92,7 +92,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex justify-between items-center border-t-[0.5px] px-28 py-5 border-black-80 text-black-80">
+      <div className="w-full max-h-14 flex justify-between items-center border-t-[0.5px] px-28 py-5 border-black-80 text-black-80">
         <div>© 2024 Company</div>
         <nav>
           <ul className="flex gap-8 text-sm ">
