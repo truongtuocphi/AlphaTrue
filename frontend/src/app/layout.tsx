@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import NextTopLoader from "nextjs-toploader";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 import "./globals.css";
@@ -24,7 +23,7 @@ export default function RootLayout({
         <NextTopLoader showSpinner={false} color="#00B6DD" />
         <main>
           <div>{children}</div>
-          {/* <Footer /> */}
+          <Footer />
         </main>
       </body>
     </html>
