@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={Mark_Pro.className}>
+      <body className={`${Mark_Pro.className} min-w-[1440px]`}>
         <NextTopLoader showSpinner={false} color="#00B6DD" />
         <main>
           <div>{children}</div>
