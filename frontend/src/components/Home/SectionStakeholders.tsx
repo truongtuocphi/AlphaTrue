@@ -30,7 +30,7 @@ export default function SectionStakeholders() {
                           <div className="pbmitFeaturedWrapper absolute">
                             <Image
                               src={link}
-                              className={`${styles.imgFluid} w-full h-screen object-cover`}
+                              className={`${styles.imgFluid} w-full h-dvh object-cover object-right`}
                               alt="image"
                             />
                           </div>
