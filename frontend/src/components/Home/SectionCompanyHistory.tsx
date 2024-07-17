@@ -6,7 +6,7 @@ export default function SectionCompanyHistory() {
     <section>
       <div className="max-w-fit flex gap-8">
         <div className="w-96">
-          <h4 className="text-4xl text-third-50 mb-6 font-bold">
+          <h4 className="text-4xl text-second-50 mb-6 font-bold">
             History - Story
           </h4>
           <p className="text-base text-black-50">

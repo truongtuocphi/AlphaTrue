@@ -58,7 +58,7 @@ export default function SectionStatistical() {
       {animatedNumbers.map(({ currentNumber, name }) => {
         return (
           <div key={name} className="flex flex-col gap-1 text-center">
-            <h3 className="font-bold text-5xl text-third-50">
+            <h3 className="font-bold text-5xl text-second-50">
               {Math.round(currentNumber) === 50
                 ? `${Math.round(currentNumber)}k+`
                 : `${Math.round(currentNumber)}+`}
