@@ -3,6 +3,7 @@ import Image from "next/image";
 import APT1 from "@/public/images/Home/APT 1.png";
 import APT2 from "@/public/images/Home/APT 2.png";
 import APT3 from "@/public/images/Home/APT 3.png";
+import CoverFlow from "./CoverFlow";
 
 const images = [
   { link: APT2, title: "INCUBATOR" },
@@ -14,7 +15,7 @@ export default function SectionStakeholders() {
   return (
     <div className="w-full h-[650px] relative">
       <div className="w-10/12 h-[566px] absolute top-0 left-2/4 -translate-x-2/4 bg-red-400 z-20 rounded-3xl overflow-hidden">
-        <section
+        {/* <section
           className={`${styles.block}, ${styles.pbmitElementServiceStyle4} h-full`}
         >
           <div
@@ -30,7 +31,7 @@ export default function SectionStakeholders() {
                           <div className="pbmitFeaturedWrapper absolute">
                             <Image
                               src={link}
-                              className={`${styles.imgFluid} w-full h-dvh object-cover object-right`}
+                              className={`${styles.imgFluid} h-dvh object-cover object-right`}
                               alt="image"
                             />
                           </div>
@@ -85,7 +86,8 @@ export default function SectionStakeholders() {
               })}
             </div>
           </div>
-        </section>
+        </section> */}
+        <CoverFlow imageData={images} />
       </div>
       <div className="absolute bottom-0 w-full h-80 bg-gradient-to-r from-blue-700 to-teal-400"></div>
     </div>
