@@ -12,7 +12,6 @@ const CENTER_ITEM_DISTANCE = 80;
 const Coverflow = (props: { imageData: any[] }) => {
   const el = useRef<HTMLDivElement>(null);
 
-  // Help function to set element style transform property
   function setTransform(
     el: HTMLDivElement,
     xpos: number,
