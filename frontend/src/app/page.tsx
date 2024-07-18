@@ -2,6 +2,7 @@ import SectionBanner from "@/components/Home/SectionBanner";
 import SectionBlog from "@/components/Home/SectionBlog";
 import SectionCompanyHistory from "@/components/Home/SectionCompanyHistory";
 import SectionStakeholders from "@/components/Home/SectionStakeholders";
+import SectionTeam from "@/components/Home/SectionTeam";
 import { getData } from "@/config/api.config";
 
 export default async function Home() {
@@ -18,6 +19,12 @@ export default async function Home() {
 
       <div>
         <SectionStakeholders />
+      </div>
+
+      <div>{/* logo alphatrue */}</div>
+
+      <div>
+        <SectionTeam />
       </div>
 
       <div className="w-full mb-32 mt-48 flex justify-center">
