@@ -64,6 +64,7 @@ export default function SectionBlog() {
           plugins={[plugin.current]}
           opts={{
             align: "start",
+            loop: true,
           }}
           className="w-full max-w-[520px] flex"
         >
