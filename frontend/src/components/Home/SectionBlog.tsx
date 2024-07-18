@@ -39,7 +39,7 @@ const data = [
 
 export default function SectionBlog() {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 2500, stopOnInteraction: true })
   );
 
   return (
@@ -87,8 +87,8 @@ export default function SectionBlog() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="disabled:opacity-0" />
+          <CarouselNext className="disabled:opacity-0" />
         </Carousel>
       </div>
     </section>
