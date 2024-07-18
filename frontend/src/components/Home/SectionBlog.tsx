@@ -1,4 +1,8 @@
+"use client";
+
+import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import Autoplay from "embla-carousel-autoplay";
 import Banner from "@/public/images/Home/Blog 1.png";
 import {
   Carousel,
@@ -34,6 +38,10 @@ const data = [
 ];
 
 export default function SectionBlog() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
+
   return (
     <section>
       <div className="flex gap-20">
@@ -53,6 +61,7 @@ export default function SectionBlog() {
           </Button>
         </div>
         <Carousel
+          plugins={[plugin.current]}
           opts={{
             align: "start",
           }}
