@@ -61,7 +61,7 @@ const Coverflow = (props: { imageData: any[] }) => {
             key={title}
             onMouseOver={() => target(index)}
             style={{ backgroundImage: `url(${link})` }}
-            className={`${styles.coverflowItem} rounded-3xl overflow-hidden z-50`}
+            className={`${styles.coverflowItem} rounded-3xl overflow-hidden`}
           >
             <div className="w-full h-full relative">
               <Image
@@ -92,7 +92,39 @@ const Coverflow = (props: { imageData: any[] }) => {
               ) : (
                 <div
                   className={`absolute bottom-52 ${
-                    index === 2 || index === 1 ? "-right-28" : "-left-28"
+                    centerIndex === 0 ? "-right-28" : "-left-28"
+                  } w-full max-w-sm -rotate-90`}
+                >
+                  <div className="text-black-100">
+                    <h2 className="text-6xl font-bold">{title}</h2>
+                  </div>
+                </div>
+              )}
+
+              {index === centerIndex ? (
+                <>
+                  <div className="w-full h-full absolute top-0 bg-bgCoverFlow"></div>
+                  <div className="absolute bottom-8 left-10 w-full max-w-sm">
+                    <p className="text-sm mb-8 text-black-100">
+                      AlphaTrue offers a multi-sectoral strategy and a one-stop
+                      solution for your business in the blockchain industry.
+                      <br />
+                      <br />
+                      We work at the crossroads of sincere, empirical, and
+                      technological research. AlphaTrue primary focuses are
+                      customer experience, advanced products, and clarity and
+                      efficiency in the management process.
+                    </p>
+                    <div className="text-black-100">
+                      <div className="mb-3">AlphaTrue</div>
+                      <h2 className="text-6xl font-bold ">{title}</h2>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div
+                  className={`absolute bottom-52 ${
+                    index == 0 || index == 2 ? "-right-28" : "-left-28"
                   } w-full max-w-sm -rotate-90`}
                 >
                   <div className="text-black-100">

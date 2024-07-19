@@ -30,13 +30,13 @@ export default async function Home() {
         <SectionAchievements />
       </div>
 
-      <div className="mt-14 px-28">
+      {/* <div className="mt-14 px-28">
         <Image src={LogoAPT} alt="APT" className="w-full h-full" />
-      </div>
+      </div> */}
 
-      <div>
+      {/* <div>
         <SectionTeam />
-      </div>
+      </div> */}
 
       <div className="w-full mb-32 mt-48 flex justify-center">
         <SectionBlog />

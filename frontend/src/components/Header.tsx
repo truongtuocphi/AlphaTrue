@@ -4,7 +4,7 @@ import IconMenu from "./icons/IconMenu";
 
 export default function Header() {
   return (
-    <header className="w-[864px] top-10 max-h-14 flex items-center justify-between bg-backgroundHeader px-5 py-3 rounded-2xl">
+    <header className="w-3/4 top-10 max-h-14 flex items-center justify-between bg-backgroundHeader px-5 py-3 rounded-2xl">
       <IconHome />
       <nav>
         <ul className="flex gap-12">

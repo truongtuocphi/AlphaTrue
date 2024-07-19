@@ -36,7 +36,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  transition: 0.5s all ease-out;
+  transition: 1s all ease-out;
 
   /*Improvement*/
   /* transition:0.8s all cubic-bezier(.17,.75,.58,.95); */
