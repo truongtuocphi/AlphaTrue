@@ -26,7 +26,7 @@ export default async function Home() {
         <SectionStakeholders />
       </div>
 
-      <div>
+      <div className="w-5/6 mx-auto">
         <SectionAchievements />
       </div>
 

@@ -7,7 +7,7 @@ import SectionStatistical from "./SectionStatistical";
 export default function SectionBanner() {
   return (
     <section>
-      <div className="w-full h-svh relative ">
+      <div className="w-full h-svh relative">
         <Image
           className="w-full h-full object-cover"
           src={webAPT1BG}
@@ -16,7 +16,7 @@ export default function SectionBanner() {
         <div className="w-full absolute flex justify-center top-10">
           <Header />
         </div>
-        <div className="absolute top-48 left-2/4 -translate-x-2/4">
+        <div className="absolute top-1/3 left-2/4 -translate-x-2/4">
           <div className="animate-fade-down">
             <IconLogoWhite />
           </div>

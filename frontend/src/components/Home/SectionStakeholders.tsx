@@ -1,13 +1,19 @@
 import APT1 from "@/public/images/Home/APT 1.png";
 import APT2 from "@/public/images/Home/APT 2.png";
 import APT3 from "@/public/images/Home/APT 3.png";
-import CoverFlow from "./CoverFlow";
-import { AnimationSection } from "../AnimationSection";
+
+import CoverFlow from "@/components/Home/CoverFlow";
+
+import { AnimationSection } from "@/components/AnimationSection";
+
+import IconIncubator from "@/components/icons/home/IconIncubator";
+import IconLabs from "@/components/icons/home/IconLabs";
+import IconMedia from "@/components/icons/home/IconMedia";
 
 const images = [
-  { link: APT2, title: "INCUBATOR" },
-  { link: APT1, title: "LABS" },
-  { link: APT3, title: "MEDIA" },
+  { link: APT2, title: "INCUBATOR", icon: <IconIncubator /> },
+  { link: APT1, title: "LABS", icon: <IconLabs /> },
+  { link: APT3, title: "MEDIA", icon: <IconMedia /> },
 ];
 
 export default function SectionStakeholders() {

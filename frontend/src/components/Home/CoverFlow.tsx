@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./CoverFlow.module.css";
+import styles from "@/components/Home/CoverFlow.module.css";
 import { useEffect, useRef, useState } from "react";
 
 const ITEM_DISTANCE = 100;
 const ITEM_ANGLE = -25;
 const CENTER_ITEM_POP = 150;
-const CENTER_ITEM_DISTANCE = 80;
+const CENTER_ITEM_DISTANCE = 50;
 
 const Coverflow = (props: { imageData: any[] }) => {
   const el = useRef<HTMLDivElement>(null);
@@ -56,7 +56,7 @@ const Coverflow = (props: { imageData: any[] }) => {
   return (
     <div className={styles.container}>
       <div className={styles.coverflow} ref={el}>
-        {props.imageData.map(({ link, title }, index) => (
+        {props.imageData.map(({ link, title, icon }, index) => (
           <div
             key={title}
             onMouseOver={() => target(index)}
@@ -91,11 +91,11 @@ const Coverflow = (props: { imageData: any[] }) => {
                 </>
               ) : (
                 <div
-                  className={`absolute bottom-52 ${
-                    centerIndex === 0 ? "-right-28" : "-left-28"
+                  className={`absolute bottom-60 ${
+                    centerIndex === 0 ? "-right-36" : "-left-36"
                   } w-full max-w-sm -rotate-90`}
                 >
-                  <div className="text-black-100">
+                  <div className="text-black-100 text-center">
                     <h2 className="text-6xl font-bold">{title}</h2>
                   </div>
                 </div>
@@ -123,11 +123,11 @@ const Coverflow = (props: { imageData: any[] }) => {
                 </>
               ) : (
                 <div
-                  className={`absolute bottom-52 ${
-                    index == 0 || index == 2 ? "-right-28" : "-left-28"
+                  className={`absolute bottom-60 ${
+                    index == 0 || index == 2 ? "-right-36" : "-left-36"
                   } w-full max-w-sm -rotate-90`}
                 >
-                  <div className="text-black-100">
+                  <div className="text-black-100 text-center">
                     <h2 className="text-6xl font-bold">{title}</h2>
                   </div>
                 </div>
