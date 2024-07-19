@@ -19,8 +19,8 @@ const linkProducts = [
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="flex justify-between py-14 px-28">
+    <footer className="bg-black-95">
+      <div className="flex justify-between py-14 px-28 ">
         <div>
           <div className="flex flex-col gap-3 mb-11">
             <IconLogo />
