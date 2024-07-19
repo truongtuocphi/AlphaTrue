@@ -118,7 +118,7 @@ blockquote {
     /* Shadow covers */ linear-gradient(
       to right,
       #fff 30%,
-      rgba(233, 233, 233, 0)
+      rgba(230, 229, 229, 0.651)
     ),
     linear-gradient(to right, rgb(255, 255, 255), #fff calc(100% - 30%)) 100% 0,
     /* Shadows */
