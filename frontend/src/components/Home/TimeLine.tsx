@@ -1,131 +1,81 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import IconIsolation from "../icons/IconIsolation";
-import IconTimeLine from "../icons/IconTimeLine";
+import React, { useState } from "react";
+import banner from "@/public/images/Home/bannerTime.png";
 
-const dataTimeLine = [
-  {
-    Time: <IconTimeLine />,
-    content: [
-      {
-        date: "22/12/1990",
-        icon: <IconIsolation />,
-        title: "Event",
-        des: "We work at the crossroads of sincere, empirical, and technological research. AlphaTrue's primary focuses are customer experience, advanced produc",
-      },
-      {
-        date: "22/12/1990",
-        icon: <IconIsolation />,
-        title: "Event",
-        des: "We work at the crossroads of sincere, empirical, and technological research. AlphaTrue's primary focuses are customer experience, advanced produc",
-      },
-    ],
-  },
-  {
-    Time: <IconTimeLine color="#00B9FC" />,
-    content: [
-      {
-        date: "22/12/1990",
-        icon: <IconIsolation />,
-        title: "Event",
-        des: "We work at the crossroads of sincere, empirical, and technological research. AlphaTrue's primary focuses are customer experience, advanced produc",
-      },
-      {
-        date: "22/12/1990",
-        icon: <IconIsolation />,
-        title: "Event",
-        des: "We work at the crossroads of sincere, empirical, and technological research. AlphaTrue's primary focuses are customer experience, advanced produc",
-      },
-    ],
-  },
-  {
-    Time: <IconTimeLine color="#00B9FC" />,
-    content: [
-      {
-        date: "22/12/1990",
-        icon: <IconIsolation />,
-        title: "Event",
-        des: "We work at the crossroads of sincere, empirical, and technological research. AlphaTrue's primary focuses are customer experience, advanced produc",
-      },
-      {
-        date: "22/12/1990",
-        icon: <IconIsolation />,
-        title: "Event",
-        des: "We work at the crossroads of sincere, empirical, and technological research. AlphaTrue's primary focuses are customer experience, advanced produc",
-      },
-    ],
-  },
-];
+import styles from "@/components/Home/TimeLine.module.css";
 
-export default function TimeLine() {
-  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+import Image from "next/image";
 
-  useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
+const TimeLine = () => {
+  const [activeTab, setActiveTab] = useState(1);
+  const [oldTab, setOldTab] = useState<number | null>(null);
 
-    if (!scrollContainer) return;
+  const handleTabClick = (id: any) => {
+    if (id === activeTab) return;
 
-    const handleWheel = (event: WheelEvent) => {
-      if (event.deltaY !== 0) {
-        event.preventDefault();
-        scrollContainer.scrollLeft += event.deltaY;
-      }
+    setOldTab(activeTab);
+    setActiveTab(id);
+  };
 
-      // Kiểm tra xem đã đến cuối của phần tử cuộn ngang chưa
-      const atEnd =
-        scrollContainer.scrollLeft + scrollContainer.clientWidth >=
-        scrollContainer.scrollWidth;
+  const renderCards = () => {
+    return Array.from({ length: 3 }, (_, i) => {
+      const id = i + 1;
+      const isHidden = id < activeTab;
 
-      // Nếu đã đến cuối phần tử cuộn ngang, cho phép cuộn trang web
-      if (atEnd && event.deltaY > 0) {
-        window.scrollBy(0, event.deltaY);
-      }
-    };
-    scrollContainer.addEventListener("wheel", handleWheel);
+      return (
+        <div
+          key={id}
+          id={id.toString()}
+          className={`${styles.card} ${isHidden ? styles.hidden : ""}`}
+          style={{
+            zIndex: 6 - i,
+            transform: `translateX(${i * 10}px) translateY(${i * 10}px)`,
+          }}
+        >
+          <Image
+            src={banner}
+            alt="banner"
+            className="w-full h-full rounded-2xl"
+          />
+        </div>
+      );
+    });
+  };
 
-    return () => {
-      scrollContainer.removeEventListener("wheel", handleWheel);
-    };
-  }, []);
   return (
-    <div
-      className="flex w-full justify-between gap-16 overflow-x-hidden relative z-10 scroll-shadows-h"
-      ref={scrollContainerRef}
-    >
-      {dataTimeLine.map((item, index) => {
-        const dataContent = item.content;
-
-        return (
-          <div key={index} className="flex-none rowShadow">
-            <div className="border-dashed border-[0.5px] absolute top-11 w-[720px] border-blue-600 -z-10"></div>
-            <div className="w-full flex gap-16 justify-between">
-              {item.Time}
-              {dataContent.map((itemContent, index) => {
-                return (
+    <section className={`flex gap-9 ${styles.page}`}>
+      <section>
+        <ul className={styles.tabsControls}>
+          {Array.from({ length: 3 }, (_, i) => {
+            const id = i + 1;
+            return (
+              <li key={id} className={styles.tabsControlsItem}>
+                <div
+                  className={`flex justify-end ${styles.tabsControlsLink} ${
+                    activeTab === id ? styles.tabsControlsLinkActive : ""
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleTabClick(id);
+                  }}
+                >
                   <div
-                    key={index}
-                    className="w-full max-w-60 flex gap-3 flex-col text-center"
+                    className={`text-black-10 cursor-pointer float-right ${
+                      activeTab === id ? "text-8xl font-bold" : "text-base"
+                    }`}
                   >
-                    <h6 className="text-xl font-bold text-black-10">
-                      {itemContent.date}
-                    </h6>
-                    <div className="flex justify-center">
-                      {itemContent.icon}
-                    </div>
-                    <div className="flex flex-col gap-3">
-                      <div className="text-base font-bold text-black-10">
-                        {itemContent.title}
-                      </div>
-                      <p className="text-sm text-black-10">{itemContent.des}</p>
-                    </div>
+                    1997
                   </div>
-                );
-              })}
-            </div>
-          </div>
-        );
-      })}
-    </div>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+      <section className={styles.cardsContainer}>{renderCards()}</section>
+    </section>
   );
-}
+};
+
+export default TimeLine;

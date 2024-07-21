@@ -8,10 +8,13 @@ const ITEM_DISTANCE = 100;
 const ITEM_ANGLE = -25;
 const CENTER_ITEM_POP = 150;
 const CENTER_ITEM_DISTANCE = 50;
+const AUTO_SLIDE_INTERVAL = 4000;
 
 const Coverflow = (props: { imageData: any[] }) => {
   const el = useRef<HTMLDivElement>(null);
   const [centerIndex, setCenterIndex] = useState<number | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   function setTransform(
     el: HTMLDivElement,
@@ -25,6 +28,26 @@ const Coverflow = (props: { imageData: any[] }) => {
     target(Math.floor(props.imageData.length * 0.5));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.imageData]);
+
+  useEffect(() => {
+    if (!isPaused) {
+      intervalRef.current = setInterval(() => {
+        setCenterIndex((prevIndex) => {
+          const nextIndex =
+            prevIndex !== null ? (prevIndex + 1) % props.imageData.length : 0;
+          target(nextIndex);
+          return nextIndex;
+        });
+      }, AUTO_SLIDE_INTERVAL);
+    }
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isPaused, props.imageData]);
 
   function target(index: number) {
     const items = el.current!.children;
@@ -52,7 +75,7 @@ const Coverflow = (props: { imageData: any[] }) => {
       }
     }
   }
-
+  console.log(isPaused);
   return (
     <div className={styles.container}>
       <div className={styles.coverflow} ref={el}>
@@ -60,6 +83,8 @@ const Coverflow = (props: { imageData: any[] }) => {
           <div
             key={title}
             onMouseOver={() => target(index)}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
             style={{ backgroundImage: `url(${link})` }}
             className={`${styles.coverflowItem} rounded-3xl overflow-hidden`}
           >

@@ -57,7 +57,7 @@ const ContactInput = () => {
         />
         <Button
           type="submit"
-          className="max-w-24 max-h-9 bg-third-50 text-third-5 text-sm shadow-none"
+          className="max-w-24 max-h-9 bg-second-50 text-second-95 text-sm shadow-none"
         >
           Get Started
         </Button>

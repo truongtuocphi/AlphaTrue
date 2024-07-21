@@ -18,7 +18,7 @@ export default async function Home() {
     <div>
       <SectionBanner />
 
-      <div className="flex justify-center my-52">
+      <div className="flex justify-center my-12 md:my-52">
         <SectionCompanyHistory />
       </div>
 
@@ -30,15 +30,7 @@ export default async function Home() {
         <SectionAchievements />
       </div>
 
-      {/* <div className="mt-14 px-28">
-        <Image src={LogoAPT} alt="APT" className="w-full h-full" />
-      </div> */}
-
-      {/* <div>
-        <SectionTeam />
-      </div> */}
-
-      <div className="w-full mb-32 mt-48 flex justify-center">
+      <div>
         <SectionBlog />
       </div>
     </div>

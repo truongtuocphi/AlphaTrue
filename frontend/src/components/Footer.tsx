@@ -19,8 +19,8 @@ const linkProducts = [
 
 export default function Footer() {
   return (
-    <footer className="bg-black-95">
-      <div className="flex justify-between py-14 px-28 ">
+    <footer className="w-full bg-black-95 mt-12 lg:mt-36">
+      <div className="grid grid-flow-row gap-9 px-6 py-6 lg:flex lg:justify-between lg:gap-0 lg:py-14 lg:px-28 ">
         <div>
           <div className="flex flex-col gap-3 mb-11">
             <IconLogo />
@@ -76,26 +76,30 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 w-96 h-fit px-3 py-5 text-center bg-backgroundThird rounded-2xl">
+        <div className="flex flex-col gap-4 w-fit h-fit px-6 py-5 text-center bg-backgroundContact rounded-2xl">
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-1">
-              <div className="text-third-50 font-bold text-xs">Get Started</div>
+              <div className="text-second-50 font-bold text-xs">
+                Get Started
+              </div>
               <h6 className="font-bold text-xl">Stay connected.</h6>
             </div>
             <div>
-              Subscribe to our newsletter for the latest updates and exclusive
-              offers.
+              Subscribe to our newsletter for the latest
+              <br className="hidden sm:block" />
+              updates and exclusive offers.
             </div>
           </div>
-          <div className="bg-white p-1 rounded-lg">
+          <div className="bg-white p-1 rounded-lg !w-full">
             <ContactInput />
           </div>
         </div>
       </div>
-      <div className="w-full max-h-14 flex justify-between items-center border-t-[0.5px] px-28 py-5 border-black-80 text-black-80">
-        <div>© 2024 Company</div>
+
+      <div className="w-full h-fit grid grid-flow-row justify-center gap-3 px-4 lg:flex lg:justify-between items-center border-t-[0.5px] lg:px-28 py-5 border-black-80 text-black-80">
+        <div>Copyright © 2024 AlphaTrue. All Rights Reserved.</div>
         <nav>
-          <ul className="flex gap-8 text-sm ">
+          <ul className="flex gap-8 text-sm justify-center lg:justify-normal">
             <li>Terms of Service</li>
             <li>Privacy Policy</li>
           </ul>

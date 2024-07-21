@@ -9,6 +9,7 @@ import { AnimationSection } from "@/components/AnimationSection";
 import IconIncubator from "@/components/icons/home/IconIncubator";
 import IconLabs from "@/components/icons/home/IconLabs";
 import IconMedia from "@/components/icons/home/IconMedia";
+import SectionStakeholdersMobile from "./SectionStakeholdersMobile";
 
 const images = [
   { link: APT2, title: "INCUBATOR", icon: <IconIncubator /> },
@@ -19,11 +20,26 @@ const images = [
 export default function SectionStakeholders() {
   return (
     <AnimationSection className={`animate-flip-up animate-duration-[3000ms]`}>
-      <div className="w-full h-fit relative">
-        <div className="z-50">
-          <CoverFlow imageData={images} />
+      <div>
+        <div className="w-full h-fit relative hidden lg:block">
+          <div className="z-50">
+            <CoverFlow imageData={images} />
+          </div>
+          <div className="absolute bottom-0 w-full h-80 bg-gradient-to-r from-blue-700 to-teal-400"></div>
         </div>
-        <div className="absolute bottom-0 w-full h-80 bg-gradient-to-r from-blue-700 to-teal-400"></div>
+
+        <div className="w-full px-6 lg:hidden">
+          {images.map((item, index) => {
+            return (
+              <div key={index} className="mb-4">
+                <SectionStakeholdersMobile
+                  link={item.link}
+                  title={item.title}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </AnimationSection>
   );

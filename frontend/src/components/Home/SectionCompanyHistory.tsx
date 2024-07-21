@@ -4,12 +4,12 @@ import { AnimationSection } from "../AnimationSection";
 
 export default function SectionCompanyHistory() {
   return (
-    <section>
-      <div className="max-w-fit flex gap-8 ">
+    <section className="max-w-4xl">
+      <div className="max-w-full grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
         <AnimationSection
           className={`animate-fade-right animate-once animate-duration-[1500ms]`}
         >
-          <div className="w-96  abc">
+          <div className="w-full">
             <h4 className="text-4xl text-second-50 mb-6 font-bold">
               History - Story
             </h4>

@@ -54,7 +54,7 @@ export default function SectionStatistical() {
   }, [animatedNumbers]);
 
   return (
-    <div className="w-full h-fit flex justify-center items-center gap-24 py-6 bg-black-20">
+    <div className="w-full h-fit grid grid-cols-2 justify-center items-center gap-14 py-6 bg-black-20 md:flex lg:gap-24">
       {animatedNumbers.map(({ currentNumber, name }) => {
         return (
           <div key={name} className="flex flex-col gap-1 text-center">
