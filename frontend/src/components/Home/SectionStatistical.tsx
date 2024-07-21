@@ -54,16 +54,18 @@ export default function SectionStatistical() {
   }, [animatedNumbers]);
 
   return (
-    <div className="w-full h-fit grid grid-cols-2 justify-center items-center gap-14 py-6 bg-black-20 md:flex lg:gap-24">
+    <div className="w-full h-fit grid grid-cols-2 justify-center items-center gap-14 py-6 px-6 bg-black-20 md:flex lg:gap-24">
       {animatedNumbers.map(({ currentNumber, name }) => {
         return (
           <div key={name} className="flex flex-col gap-1 text-center">
-            <h3 className="font-bold text-5xl text-second-50">
+            <h3 className="font-bold text-3xl sm:text-4xl lg:text-5xl text-second-50">
               {Math.round(currentNumber) === 50
                 ? `${Math.round(currentNumber)}k+`
                 : `${Math.round(currentNumber)}+`}
             </h3>
-            <div className="font-bold text-base text-black-100">{name}</div>
+            <div className="font-bold text-sm sm:text-base text-black-100">
+              {name}
+            </div>
           </div>
         );
       })}

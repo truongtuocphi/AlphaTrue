@@ -62,13 +62,13 @@ export default function SectionBlog() {
 
   return (
     <section>
-      <div className="w-full h-full grid-flow-col md:flex gap-5 px-6 lg:px-28">
+      <div className="w-full h-full grid-flow-col justify-center md:flex gap-5 px-6 lg:px-28">
         <div>
           <AnimationSection
             className={`animate-fade-right animate-once animate-duration-[2000ms]`}
           >
             <div className="w-full max-w-96 flex flex-col gap-6 mb-6 lg:mb-0">
-              <h4 className="text-4xl font-bold text-second-50">
+              <h4 className="text-xl md:text-2xl lg:text-4xl font-bold text-second-50">
                 ATP on Media
               </h4>
               <p className="text-base text-black-50 font-normal">

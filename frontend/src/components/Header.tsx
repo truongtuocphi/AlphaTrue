@@ -52,7 +52,7 @@ export default function Header() {
               return (
                 <li
                   key={title}
-                  className="text-black-100 text-base font-medium"
+                  className="text-black-100 text-base 2xl:text-2xl font-medium"
                 >
                   <Link href={link}>{title}</Link>
                 </li>

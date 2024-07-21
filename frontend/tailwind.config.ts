@@ -83,7 +83,7 @@ const config = {
           95: "rgb(245,245,245)",
           100: "rgb(255,255,255)",
         },
-        backgroundHeader: "rgba(0, 0, 0, 0.4)",
+        backgroundHeader: "rgba(69, 69, 69, 0.5)",
         backgroundContact: "rgb(230,241,245)",
         border: "#303433",
         input: "hsl(var(--input))",

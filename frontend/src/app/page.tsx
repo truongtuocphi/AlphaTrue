@@ -18,7 +18,7 @@ export default async function Home() {
     <div>
       <SectionBanner />
 
-      <div className="flex justify-center my-12 md:my-52">
+      <div className="flex justify-center my-12 md:mt-52 md:mb-32">
         <SectionCompanyHistory />
       </div>
 
@@ -26,7 +26,7 @@ export default async function Home() {
         <SectionStakeholders />
       </div>
 
-      <div className="w-5/6 mx-auto">
+      <div className="flex justify-center px-6 lg:mx-auto">
         <SectionAchievements />
       </div>
 

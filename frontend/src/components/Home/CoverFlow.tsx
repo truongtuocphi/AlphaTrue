@@ -75,7 +75,7 @@ const Coverflow = (props: { imageData: any[] }) => {
       }
     }
   }
-  console.log(isPaused);
+
   return (
     <div className={styles.container}>
       <div className={styles.coverflow} ref={el}>
