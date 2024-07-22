@@ -21,7 +21,7 @@ export default function SectionStatistical() {
 
       if (currentPosition >= triggerPosition) {
         // Nếu scroll đến vị trí trigger, bắt đầu animation
-        const animationDuration = 2000; // Thời gian animation (ms)
+        const animationDuration = 20000; // Thời gian animation (ms)
         const intervalTime = 60; // Thời gian cập nhật số lần mỗi lần animation (ms)
         const increments = animatedNumbers.map((item) => ({
           ...item,

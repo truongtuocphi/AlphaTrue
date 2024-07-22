@@ -24,6 +24,8 @@ export const AnimationSection: React.FC<{
         setVisible(true);
         // No need to keep observing:
         observer.unobserve(domRef?.current as HTMLElement);
+      } else {
+        setVisible(false);
       }
     });
     observer.observe(domRef?.current as HTMLElement);
