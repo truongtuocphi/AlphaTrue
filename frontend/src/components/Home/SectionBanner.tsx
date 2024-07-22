@@ -42,7 +42,7 @@ export default function SectionBanner() {
         >
           <Header />
         </div>
-        <div className="absolute top-1/3 left-2/4 -translate-x-2/4">
+        <div className="w-full md:w-1/2 px-4 absolute top-1/3 left-2/4 -translate-x-2/4">
           <div className="w-full animate-fade-down">
             <IconLogoWhite width="100%" height="100%" />
           </div>
