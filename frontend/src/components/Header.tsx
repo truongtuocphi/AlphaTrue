@@ -11,7 +11,17 @@ const listMenu = [
   { title: "Team", link: "/team" },
 ];
 
-export default function Header() {
+type HeaderProps = {
+  bgColor: "bg-backgroundHeader" | "backgroundGrayHeader";
+  textColor: "text-black-100" | "text-black-50";
+  fill: "black" | "white";
+};
+
+const Header = ({
+  bgColor = "bg-backgroundHeader",
+  textColor = "text-black-100",
+  fill = "white",
+}: HeaderProps) => {
   const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -42,17 +52,17 @@ export default function Header() {
       <header className="w-full flex gap-2 items-center justify-between px-6 md:justify-normal md:w-fit md:px-0">
         <div
           className={`p-3 size-12 rounded-full ${isMenuOpen && "hidden"} ${
-            isSticky ? "bg-backgroundHeader" : "bg-backgroundHeader"
+            isSticky ? bgColor : bgColor
           }`}
         >
           <Link href="/">
-            <IconHome />
+            <IconHome color={fill} />
           </Link>
         </div>
 
         <div
           className={`w-full top-10 hidden items-center justify-between md:flex ${
-            isSticky ? "bg-backgroundHeader" : "bg-backgroundHeader"
+            isSticky ? bgColor : bgColor
           } px-8 py-3 rounded-2xl`}
         >
           <nav>
@@ -60,7 +70,7 @@ export default function Header() {
               {listMenu.map(({ title, link }) => (
                 <li
                   key={title}
-                  className="text-black-100 text-base 2xl:text-2xl font-medium"
+                  className={`${textColor} text-base 2xl:text-2xl font-medium`}
                 >
                   <Link href={link}>{title}</Link>
                 </li>
@@ -72,9 +82,7 @@ export default function Header() {
         <div
           className={`size-11 h-fit top-10 block items-center justify-between md:hidden ${
             isMenuOpen && "hidden"
-          } ${
-            isSticky ? "bg-backgroundHeader" : "bg-backgroundHeader"
-          } p-3 rounded-xl cursor-pointer`}
+          } ${isSticky ? bgColor : bgColor} p-3 rounded-xl cursor-pointer`}
           onClick={() => setIsMenuOpen(true)}
         >
           <IconMenu />
@@ -122,4 +130,6 @@ export default function Header() {
       </header>
     </div>
   );
-}
+};
+
+export default Header;

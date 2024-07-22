@@ -7,7 +7,11 @@ export default function invest() {
   return (
     <>
       <div className="w-full h-fit flex justify-center mt-10">
-        <Header />
+        <Header
+          bgColor="bg-backgroundGrayHeader"
+          textColor="text-black-50"
+          fill="black"
+        />
       </div>
       <SectionBannerPage
         title="Investor"
