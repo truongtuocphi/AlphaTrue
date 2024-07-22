@@ -12,7 +12,7 @@ const listMenu = [
 ];
 
 type HeaderProps = {
-  bgColor: "bg-backgroundHeader" | "backgroundGrayHeader";
+  bgColor: "bg-backgroundHeader" | "bg-backgroundGrayHeader";
   textColor: "text-black-100" | "text-black-50";
   fill: "black" | "white";
 };
