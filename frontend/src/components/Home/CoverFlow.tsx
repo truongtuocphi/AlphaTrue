@@ -32,14 +32,14 @@ const Coverflow = (props: { imageData: any[] }) => {
 
   useEffect(() => {
     if (!isPaused) {
-      // intervalRef.current = setInterval(() => {
-      //   setCenterIndex((prevIndex) => {
-      //     const nextIndex =
-      //       prevIndex !== null ? (prevIndex + 1) % props.imageData.length : 0;
-      //     target(nextIndex);
-      //     return nextIndex;
-      //   });
-      // }, AUTO_SLIDE_INTERVAL);
+      intervalRef.current = setInterval(() => {
+        setCenterIndex((prevIndex) => {
+          const nextIndex =
+            prevIndex !== null ? (prevIndex + 1) % props.imageData.length : 0;
+          target(nextIndex);
+          return nextIndex;
+        });
+      }, AUTO_SLIDE_INTERVAL);
     }
 
     return () => {
