@@ -85,7 +85,7 @@ export default function SectionBlog() {
 
         <div>
           <AnimationSection
-            className={`animate-fade-left animate-once animate-duration-[2000ms]`}
+            className={`animate-fade-up animate-once animate-duration-[2000ms]`}
           >
             <Carousel
               plugins={[plugin.current]}
