@@ -29,7 +29,7 @@ export default function SectionBanner() {
 
   return (
     <section>
-      <div className="w-full h-dvh relative">
+      <div className="w-full h-[450px] lg:h-dvh relative">
         <Image
           className="w-full h-full object-cover"
           src={webAPT1BG}
@@ -42,14 +42,15 @@ export default function SectionBanner() {
         >
           <Header />
         </div>
-        <div className="w-full md:w-1/2 px-4 absolute top-1/3 left-2/4 -translate-x-2/4">
+        <div className="w-full sm:w-1/2 px-4 absolute top-1/3 left-2/4 -translate-x-2/4">
           <div className="w-full animate-fade-down">
             <IconLogoWhite width="100%" height="100%" />
           </div>
           <div className="text-center mt-12 animate-fade-up">
             <h6 className="text-base sm:text-xl lg:text-2xl 2xl:text-4xl font-medium text-black-100">
-              The true solution for the alpha projects in the decentralized
-              world
+              The true solution for the alpha projects in the
+              <br className="block sm:hidden" />
+              decentralized world
             </h6>
           </div>
         </div>
