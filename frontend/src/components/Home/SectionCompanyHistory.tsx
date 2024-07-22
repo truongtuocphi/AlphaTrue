@@ -4,7 +4,7 @@ import { AnimationSection } from "../AnimationSection";
 
 export default function SectionCompanyHistory() {
   return (
-    <section className="max-w-4xl">
+    <section className="max-w-5xl">
       <div className="max-w-full grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
         <AnimationSection
           className={`animate-fade-right animate-once animate-duration-[1500ms]`}
