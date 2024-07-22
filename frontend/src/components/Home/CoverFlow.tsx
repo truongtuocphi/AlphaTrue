@@ -24,6 +24,7 @@ const Coverflow = (props: { imageData: any[] }) => {
   ) {
     el.style.transform = `translateX(${xpos}px) translateZ(${zpos}px) rotateY(${yAngle}deg)`;
   }
+
   useEffect(() => {
     target(Math.floor(props.imageData.length * 0.5));
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -31,14 +32,14 @@ const Coverflow = (props: { imageData: any[] }) => {
 
   useEffect(() => {
     if (!isPaused) {
-      intervalRef.current = setInterval(() => {
-        setCenterIndex((prevIndex) => {
-          const nextIndex =
-            prevIndex !== null ? (prevIndex + 1) % props.imageData.length : 0;
-          target(nextIndex);
-          return nextIndex;
-        });
-      }, AUTO_SLIDE_INTERVAL);
+      // intervalRef.current = setInterval(() => {
+      //   setCenterIndex((prevIndex) => {
+      //     const nextIndex =
+      //       prevIndex !== null ? (prevIndex + 1) % props.imageData.length : 0;
+      //     target(nextIndex);
+      //     return nextIndex;
+      //   });
+      // }, AUTO_SLIDE_INTERVAL);
     }
 
     return () => {
@@ -116,12 +117,13 @@ const Coverflow = (props: { imageData: any[] }) => {
                 </>
               ) : (
                 <div
-                  className={`absolute bottom-60 ${
-                    centerIndex === 0 ? "-right-36" : "-left-36"
-                  } w-full max-w-sm -rotate-90`}
+                  className={`absolute bottom-5 ${
+                    centerIndex === 0 ? "right-5" : "left-7"
+                  } -rotate-0`}
                 >
                   <div className="text-black-100 text-center">
-                    <h2 className="text-6xl font-bold">{title}</h2>
+                    {/* <h2 className="text-6xl font-bold">{title}</h2> */}
+                    {icon}
                   </div>
                 </div>
               )}
@@ -148,12 +150,13 @@ const Coverflow = (props: { imageData: any[] }) => {
                 </>
               ) : (
                 <div
-                  className={`absolute bottom-60 ${
-                    index == 0 || index == 2 ? "-right-36" : "-left-36"
-                  } w-full max-w-sm -rotate-90`}
+                  className={`absolute bottom-5 ${
+                    index == 2 ? "right-5" : "left-7"
+                  }  -rotate-0`}
                 >
                   <div className="text-black-100 text-center">
-                    <h2 className="text-6xl font-bold">{title}</h2>
+                    {/* <h2 className="text-6xl font-bold">{title}</h2> */}
+                    {icon}
                   </div>
                 </div>
               )}
