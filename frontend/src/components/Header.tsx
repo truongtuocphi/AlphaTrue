@@ -81,7 +81,7 @@ export default function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="w-full fixed inset-0 z-50 flex justify-start bg-backgroundHeader animate-fade-down duration-300 ease-in-out">
+          <div className="w-full fixed inset-0 z-50 flex justify-start bg-black-50 animate-fade-down duration-300 ease-in-out">
             <div className="w-full h-1/2 bg-backgroundHeaderMobile p-6 rounded-lg transition-transform transform duration-300 ease-in-out">
               <div className="flex items-center justify-between border-b-[0.5px] border-black-70 pb-4">
                 <div
