@@ -16,16 +16,12 @@ const SectionBannerPage: React.FC<{
           <div className="mb-3">
             <AnimationSection className="animate-flip-down">
               <h3 className="text-2xl sm:text-4xl font-bold text-black-50">
-                AlphaTrue <span className="text-second-50">Investor</span>
+                AlphaTrue <span className="text-second-50">{title}</span>
               </h3>
             </AnimationSection>
           </div>
           <AnimationSection className="animate-flip-up">
-            <p className="text-sm md:text-xl 2xl:text-2xl">
-              We’re proud to support and invest in over 10+ companies in the
-              crypto industry, across every stage and sub-sector. Meet our
-              portfolio below.
-            </p>
+            <p className="text-sm md:text-xl 2xl:text-2xl">{des}</p>
           </AnimationSection>
         </div>
 

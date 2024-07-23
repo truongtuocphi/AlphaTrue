@@ -12,9 +12,14 @@ import IconMedia from "@/components/icons/home/IconMedia";
 import SectionStakeholdersMobile from "./SectionStakeholdersMobile";
 
 const images = [
-  { link: APT2, title: "INCUBATOR", icon: <IconIncubator /> },
-  { link: APT1, title: "LABS", icon: <IconLabs /> },
-  { link: APT3, title: "MEDIA", icon: <IconMedia /> },
+  {
+    link: APT2,
+    title: "INCUBATOR",
+    icon: <IconIncubator />,
+    router: "/incubator",
+  },
+  { link: APT1, title: "LABS", icon: <IconLabs />, router: "/labs" },
+  { link: APT3, title: "MEDIA", icon: <IconMedia />, router: "/media" },
 ];
 
 export default function SectionStakeholders() {

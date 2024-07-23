@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styles from "@/components/Home/CoverFlow.module.css";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 const ITEM_DISTANCE = 100;
 const ITEM_ANGLE = -25;
@@ -80,7 +81,7 @@ const Coverflow = (props: { imageData: any[] }) => {
   return (
     <div className={styles.container}>
       <div className={styles.coverflow} ref={el}>
-        {props.imageData.map(({ link, title, icon }, index) => (
+        {props.imageData.map(({ link, title, icon, router }, index) => (
           <div
             key={title}
             onMouseOver={() => target(index)}
@@ -89,78 +90,82 @@ const Coverflow = (props: { imageData: any[] }) => {
             style={{ backgroundImage: `url(${link})` }}
             className={`${styles.coverflowItem} rounded-3xl overflow-hidden`}
           >
-            <div className="w-full h-full relative">
-              <Image
-                src={link}
-                alt={title}
-                className="w-full h-full object-cover object-right z-0"
-              />
-              {index === centerIndex ? (
-                <>
-                  <div className="w-full h-full absolute top-0 bg-bgCoverFlow"></div>
-                  <div className="absolute bottom-8 left-10 w-full max-w-sm">
-                    <p className="text-sm mb-8 text-black-100">
-                      AlphaTrue offers a multi-sectoral strategy and a one-stop
-                      solution for your business in the blockchain industry.
-                      <br />
-                      <br />
-                      We work at the crossroads of sincere, empirical, and
-                      technological research. AlphaTrue primary focuses are
-                      customer experience, advanced products, and clarity and
-                      efficiency in the management process.
-                    </p>
-                    <div className="text-black-100">
-                      <div className="mb-3">AlphaTrue</div>
-                      <h2 className="text-6xl font-bold ">{title}</h2>
+            <Link href={router}>
+              <div className="w-full h-full relative">
+                <Image
+                  src={link}
+                  alt={title}
+                  className="w-full h-full object-cover object-right z-0"
+                />
+                {index === centerIndex ? (
+                  <>
+                    <div className="w-full h-full absolute top-0 bg-bgCoverFlow"></div>
+                    <div className="absolute bottom-8 left-10 w-full max-w-sm">
+                      <p className="text-sm mb-8 text-black-100">
+                        AlphaTrue offers a multi-sectoral strategy and a
+                        one-stop solution for your business in the blockchain
+                        industry.
+                        <br />
+                        <br />
+                        We work at the crossroads of sincere, empirical, and
+                        technological research. AlphaTrue primary focuses are
+                        customer experience, advanced products, and clarity and
+                        efficiency in the management process.
+                      </p>
+                      <div className="text-black-100">
+                        <div className="mb-3">AlphaTrue</div>
+                        <h2 className="text-6xl font-bold ">{title}</h2>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <div
+                    className={`absolute bottom-5 ${
+                      centerIndex === 0 ? "right-5" : "left-7"
+                    } -rotate-0`}
+                  >
+                    <div className="text-black-100 text-center">
+                      {/* <h2 className="text-6xl font-bold">{title}</h2> */}
+                      {icon}
                     </div>
                   </div>
-                </>
-              ) : (
-                <div
-                  className={`absolute bottom-5 ${
-                    centerIndex === 0 ? "right-5" : "left-7"
-                  } -rotate-0`}
-                >
-                  <div className="text-black-100 text-center">
-                    {/* <h2 className="text-6xl font-bold">{title}</h2> */}
-                    {icon}
-                  </div>
-                </div>
-              )}
+                )}
 
-              {index === centerIndex ? (
-                <>
-                  <div className="w-full h-full absolute top-0 bg-bgCoverFlow"></div>
-                  <div className="absolute bottom-8 left-10 w-full max-w-sm">
-                    <p className="text-sm mb-8 text-black-100">
-                      AlphaTrue offers a multi-sectoral strategy and a one-stop
-                      solution for your business in the blockchain industry.
-                      <br />
-                      <br />
-                      We work at the crossroads of sincere, empirical, and
-                      technological research. AlphaTrue primary focuses are
-                      customer experience, advanced products, and clarity and
-                      efficiency in the management process.
-                    </p>
-                    <div className="text-black-100">
-                      <div className="mb-3">AlphaTrue</div>
-                      <h2 className="text-6xl font-bold ">{title}</h2>
+                {index === centerIndex ? (
+                  <>
+                    <div className="w-full h-full absolute top-0 bg-bgCoverFlow"></div>
+                    <div className="absolute bottom-8 left-10 w-full max-w-sm">
+                      <p className="text-sm mb-8 text-black-100">
+                        AlphaTrue offers a multi-sectoral strategy and a
+                        one-stop solution for your business in the blockchain
+                        industry.
+                        <br />
+                        <br />
+                        We work at the crossroads of sincere, empirical, and
+                        technological research. AlphaTrue primary focuses are
+                        customer experience, advanced products, and clarity and
+                        efficiency in the management process.
+                      </p>
+                      <div className="text-black-100">
+                        <div className="mb-3">AlphaTrue</div>
+                        <h2 className="text-6xl font-bold ">{title}</h2>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <div
+                    className={`absolute bottom-5 ${
+                      index == 2 ? "right-5" : "left-7"
+                    }  -rotate-0`}
+                  >
+                    <div className="text-black-100 text-center">
+                      {/* <h2 className="text-6xl font-bold">{title}</h2> */}
+                      {icon}
                     </div>
                   </div>
-                </>
-              ) : (
-                <div
-                  className={`absolute bottom-5 ${
-                    index == 2 ? "right-5" : "left-7"
-                  }  -rotate-0`}
-                >
-                  <div className="text-black-100 text-center">
-                    {/* <h2 className="text-6xl font-bold">{title}</h2> */}
-                    {icon}
-                  </div>
-                </div>
-              )}
-            </div>
+                )}
+              </div>
+            </Link>
           </div>
         ))}
       </div>
