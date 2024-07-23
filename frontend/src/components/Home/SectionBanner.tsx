@@ -15,7 +15,12 @@ export default function SectionBanner() {
           alt="banner"
         />
         <div className="w-full flex justify-center absolute top-10">
-          <Header />
+          <Header
+            bgColor="bg-backgroundHeader"
+            textColor="text-black-100"
+            bgColorScroll="bg-backgroundHeader"
+            fill="white"
+          />
         </div>
         <div className="w-full sm:w-1/2 px-4 absolute top-1/3 left-2/4 -translate-x-2/4">
           <div className="w-full animate-fade-down">
