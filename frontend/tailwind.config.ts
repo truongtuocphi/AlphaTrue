@@ -26,7 +26,9 @@ const config = {
       boxShadow: {
         "custom-lg": "0px 15px 30px 0px rgba(0, 15, 10, 0.05)",
         "custom-sm": "0px 5px 10px 0px rgba(0, 15, 10, 0.05)",
-        "custom-inset": "0px 0px 12px 0px rgba(26, 187, 246, 0.25) inset",
+        "custom-inset": "0px 0px 100px 0px rgba(0, 185, 252, 0.2) inset",
+        "custom-inset-portfolio":
+          "0px 0px 100px 0px rgba(0, 185, 252, 0.2) inset",
       },
       backgroundImage: {
         bgCoverFlow:

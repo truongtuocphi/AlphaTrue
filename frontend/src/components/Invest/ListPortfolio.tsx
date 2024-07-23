@@ -113,11 +113,11 @@ const ListPortfolio = () => {
           {listProtfolio.map(({ title, describe, icon }, index) => (
             <div
               key={index}
-              className="w-full max-h-72 overflow-hidden sm:w-1/3 lg:w-1/4 xl:w-1/5 pt-4 px-4 pb-7 shadow-custom-lg rounded-2xl hover:shadow-custom-inset cursor-pointer"
+              className="group w-full max-h-72 overflow-hidden sm:w-1/3 lg:w-1/4 xl:w-1/5 pt-4 px-4 pb-7 shadow-custom-lg rounded-2xl hover:shadow-custom-inset-portfolio cursor-pointer"
             >
               <div className="flex justify-center mb-7">{icon}</div>
               <div className="text-center">
-                <h5 className="text-2xl mb-3 font-extrabold text-black-5">
+                <h5 className="text-2xl mb-3 font-extrabold text-black-5 group-hover:text-second-50">
                   {title}
                 </h5>
                 <p className="text-black-70 text-base line-clamp-5">
