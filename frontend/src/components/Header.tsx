@@ -89,7 +89,7 @@ const Header = ({
           } p-3 rounded-xl cursor-pointer`}
           onClick={() => setIsMenuOpen(true)}
         >
-          <IconMenu />
+          <IconMenu color={fill} />
         </div>
 
         {isMenuOpen && (
