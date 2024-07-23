@@ -14,11 +14,13 @@ const listMenu = [
 type HeaderProps = {
   bgColor: "bg-backgroundHeader" | "bg-backgroundGrayHeader";
   textColor: "text-black-100" | "text-black-50";
+  bgColorScroll?: "bg-backgroundHeader" | "bg-backgroundGrayHeader";
   fill: "black" | "white";
 };
 
 const Header = ({
   bgColor = "bg-backgroundHeader",
+  bgColorScroll = "bg-backgroundHeader",
   textColor = "text-black-100",
   fill = "white",
 }: HeaderProps) => {
@@ -52,7 +54,7 @@ const Header = ({
       <header className="w-full flex gap-2 items-center justify-between px-6 md:justify-normal md:w-fit md:px-0">
         <div
           className={`p-3 size-12 rounded-full ${isMenuOpen && "hidden"} ${
-            isSticky ? bgColor : bgColor
+            isSticky ? bgColor : bgColorScroll
           }`}
         >
           <Link href="/">
@@ -62,7 +64,7 @@ const Header = ({
 
         <div
           className={`w-full top-10 hidden items-center justify-between md:flex ${
-            isSticky ? bgColor : bgColor
+            isSticky ? bgColor : bgColorScroll
           } px-8 py-3 rounded-2xl`}
         >
           <nav>
@@ -70,7 +72,7 @@ const Header = ({
               {listMenu.map(({ title, link }) => (
                 <li
                   key={title}
-                  className={`${textColor} text-base 2xl:text-2xl font-medium`}
+                  className={`${textColor} text-base 2xl:text-2xl font-bold`}
                 >
                   <Link href={link}>{title}</Link>
                 </li>
@@ -82,7 +84,9 @@ const Header = ({
         <div
           className={`size-11 h-fit top-10 block items-center justify-between md:hidden ${
             isMenuOpen && "hidden"
-          } ${isSticky ? bgColor : bgColor} p-3 rounded-xl cursor-pointer`}
+          } ${
+            isSticky ? bgColor : bgColorScroll
+          } p-3 rounded-xl cursor-pointer`}
           onClick={() => setIsMenuOpen(true)}
         >
           <IconMenu />

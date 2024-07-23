@@ -23,6 +23,10 @@ const config = {
         secondBody: "#292929",
         body: "#FAFAFA",
       },
+      boxShadow: {
+        "custom-lg": "0px 15px 30px 0px rgba(0, 15, 10, 0.05)",
+        "custom-sm": "0px 5px 10px 0px rgba(0, 15, 10, 0.05)",
+      },
       backgroundImage: {
         bgCoverFlow:
           "linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.198545) 12.06%, rgba(0, 0, 0, 0.267009) 16.25%, rgba(0, 0, 0, 0.364) 27.26%, rgba(0, 0, 0, 0.547062) 79.67%, rgba(0, 0, 0, 0.7) 104.83%)",
