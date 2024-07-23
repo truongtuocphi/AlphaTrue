@@ -112,7 +112,7 @@ const ListPortfolio = () => {
         {listProtfolio.map(({ title, describe, icon }, index) => (
           <div
             key={index}
-            className="w-full max-h-72 overflow-hidden sm:w-1/3 lg:w-1/4 xl:w-1/5 pt-4 px-4 pb-7 shadow-custom-lg rounded-2xl col-span-1"
+            className="w-full max-h-72 overflow-hidden sm:w-1/3 lg:w-1/4 xl:w-1/5 pt-4 px-4 pb-7 shadow-custom-lg rounded-2xl col-span-1 hover:shadow-hoverList cursor-pointer"
           >
             <div className="flex justify-center mb-7">{icon}</div>
             <div className="text-center">

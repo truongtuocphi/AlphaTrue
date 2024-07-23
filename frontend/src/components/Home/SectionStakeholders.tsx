@@ -40,6 +40,7 @@ export default function SectionStakeholders() {
                 <SectionStakeholdersMobile
                   link={item.link}
                   title={item.title}
+                  router={item.router}
                 />
               </div>
             );
