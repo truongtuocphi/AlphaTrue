@@ -1,5 +1,7 @@
 import { AnimationSection } from "@/components/AnimationSection";
 import Header from "@/components/Header";
+import ListLeader from "@/components/Team/ListLeader";
+import ListTeam from "@/components/Team/ListTeam";
 
 export default function Team() {
   return (
@@ -31,6 +33,10 @@ export default function Team() {
           </AnimationSection>
         </div>
       </div>
+
+      <ListLeader />
+
+      <ListTeam />
     </div>
   );
 }
