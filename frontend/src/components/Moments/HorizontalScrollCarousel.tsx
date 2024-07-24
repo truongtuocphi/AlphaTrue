@@ -6,7 +6,7 @@ import Card from "@/components/Moments/Card";
 import Avatar_1 from "@/public/images/Team/avatar.png";
 import Avatar_2 from "@/public/images/Team/avatar_member.png";
 import Avatar_3 from "@/public/images/Moment/moment 1.png";
-import Avatar_4 from "@/public/images/Moment/moment 2.png";
+import Avatar_4 from "@/public/images/Moment/Moment 2.png";
 import Image from "next/image";
 
 const images = [
