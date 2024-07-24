@@ -94,6 +94,8 @@ const config = {
         backgroundGrayHeader: "rgba(190, 190, 190, 0.2)",
         backgroundHeaderMobile: "rgba(69, 69, 69, 0.5)",
         backgroundContact: "rgb(230,241,245)",
+        backgroundModel: "rgba(0, 0, 0, 0.3)",
+        bgHoverModel: "rgba(0, 0, 0, 0.06)",
         border: "#303433",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

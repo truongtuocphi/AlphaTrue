@@ -1,7 +1,8 @@
-const Card = ({ card }: any) => {
+const Card = ({ card, onClick }: any) => {
   return (
     <div
       key={card.id}
+      onClick={() => onClick(card.id)}
       className="group relative h-[300px] w-[448px] overflow-hidden bg-neutral-200 rounded-lg cursor-pointer"
     >
       <div

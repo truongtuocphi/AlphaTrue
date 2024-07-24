@@ -3,19 +3,25 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
 import Card from "@/components/Moments/Card";
 
-import Avatar from "@/public/images/Team/avatar.png";
+import Avatar_1 from "@/public/images/Team/avatar.png";
+import Avatar_2 from "@/public/images/Team/avatar_member.png";
+import Avatar_3 from "@/public/images/Moment/moment 1.png";
+import Avatar_4 from "@/public/images/Moment/moment 2.png";
+import Image from "next/image";
 
 const images = [
-  { id: 1, src: Avatar.src, alt: "Image 1" },
-  { id: 2, src: Avatar.src, alt: "Image 2" },
-  { id: 3, src: Avatar.src, alt: "Image 3" },
-  { id: 4, src: Avatar.src, alt: "Image 4" },
+  { id: 1, src: Avatar_1.src, alt: "Image 1" },
+  { id: 2, src: Avatar_2.src, alt: "Image 2" },
+  { id: 3, src: Avatar_3.src, alt: "Image 3" },
+  { id: 4, src: Avatar_4.src, alt: "Image 4" },
 ];
 
 const HorizontalScrollCarousel = () => {
   const targetRef = useRef(null);
   const [transformValues, setTransformValues] = useState(["25%", "-50%"]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -52,18 +58,81 @@ const HorizontalScrollCarousel = () => {
     return () => unsubscribe();
   }, [scrollYProgress]);
 
+  const handleCardClick = (index: number) => {
+    setSelectedImageIndex(index - 1);
+    setIsModalOpen(true);
+  };
+
+  const handlePrevClick = () => {
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex > 0 ? prevIndex - 1 : images.length - 1
+    );
+  };
+
+  const handleNextClick = () => {
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex < images.length - 1 ? prevIndex + 1 : 0
+    );
+  };
+
+  const handleModalClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      setIsModalOpen(false);
+    }
+  };
+
   return (
     <section ref={targetRef} className="relative h-[300vh]">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+      <div
+        className={`sticky top-0 flex h-screen items-center overflow-hidden ${
+          isModalOpen && `hidden`
+        }`}
+      >
         <motion.div style={{ x }} className="flex gap-4 relative">
           {images.map((card) => (
-            <Card card={card} key={card.id} />
+            <Card card={card} key={card.id} onClick={handleCardClick} />
           ))}
         </motion.div>
         <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 m-4 text-2xl text-black-50">
           {currentIndex + 1} - {images.length}
         </div>
       </div>
+
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 flex items-center justify-center bg-backgroundModel z-50"
+          onClick={handleModalClick}
+        >
+          {/* <button
+            className="absolute top-4 right-4 text-black-20 text-3xl"
+            onClick={() => setIsModalOpen(false)}
+          >
+            &times;
+          </button> */}
+          <div
+            className="absolute py-48 px-8 left-4 lg:left-56 hover:cursor-pointer hover:bg-bgHoverModel"
+            onClick={handlePrevClick}
+          >
+            <button className="text-black-20 text-3xl">&larr;</button>
+          </div>
+          <div className="w-[650px] h-[450px] overflow-hidden">
+            <Image
+              src={images[selectedImageIndex].src}
+              alt={images[selectedImageIndex].alt}
+              className="object-cover"
+              width={700}
+              height={450}
+            />
+          </div>
+
+          <div
+            className="absolute py-48 px-8 right-4 lg:right-56 hover:cursor-pointer hover:bg-bgHoverModel"
+            onClick={handleNextClick}
+          >
+            <button className="text-black-20 text-3xl ">&rarr;</button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
