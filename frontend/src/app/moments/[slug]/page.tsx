@@ -1,4 +1,3 @@
-// import { AnimationSection } from "@/components/AnimationSection";
 import Header from "@/components/Header";
 import HorizontalScrollCarousel from "@/components/Moments/HorizontalScrollCarousel";
 

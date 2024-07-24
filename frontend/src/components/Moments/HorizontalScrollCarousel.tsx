@@ -1,6 +1,8 @@
 "use client";
+
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
+import { AnimationSection } from "@/components/AnimationSection";
 import Card from "@/components/Moments/Card";
 
 import Avatar_1 from "@/public/images/Team/avatar.png";
@@ -90,7 +92,9 @@ const HorizontalScrollCarousel = () => {
       >
         <motion.div style={{ x }} className="flex gap-4 relative">
           {images.map((card) => (
-            <Card card={card} key={card.id} onClick={handleCardClick} />
+            <AnimationSection className="animate-flip-down" key={card.id}>
+              <Card card={card} onClick={handleCardClick} />
+            </AnimationSection>
           ))}
         </motion.div>
         <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 m-4 text-2xl text-black-50">
@@ -110,12 +114,12 @@ const HorizontalScrollCarousel = () => {
             &times;
           </button> */}
           <div
-            className="absolute py-48 px-8 left-4 lg:left-56 hover:cursor-pointer hover:bg-bgHoverModel"
+            className="absolute lg:py-48 lg:px-8 left-4 lg:left-56 hover:cursor-pointer lg:hover:bg-bgHoverModel"
             onClick={handlePrevClick}
           >
             <button className="text-black-20 text-3xl">&larr;</button>
           </div>
-          <div className="w-[650px] h-[450px] overflow-hidden">
+          <div className="w-[650px] h-[450px] flex justify-center overflow-hidden">
             <Image
               src={images[selectedImageIndex].src}
               alt={images[selectedImageIndex].alt}
@@ -126,7 +130,7 @@ const HorizontalScrollCarousel = () => {
           </div>
 
           <div
-            className="absolute py-48 px-8 right-4 lg:right-56 hover:cursor-pointer hover:bg-bgHoverModel"
+            className="absolute lg:py-48 lg:px-8 right-4 lg:right-56 hover:cursor-pointer lg:hover:bg-bgHoverModel"
             onClick={handleNextClick}
           >
             <button className="text-black-20 text-3xl ">&rarr;</button>
