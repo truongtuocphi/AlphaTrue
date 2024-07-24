@@ -10,14 +10,14 @@ const listMoment = [
     describe:
       "We work at the crossroads of sincere, empirical, and technological research. AlphaTrue's primary focuses are customer experience, advanced products, and clarity and efficiency in the management process.",
     img: momentIMG,
-    link: "/#",
+    link: "/moments/team-building-mui-ne-2022 1",
   },
   {
     title: "Team Building Mui Ne 2022",
     describe:
       "We work at the crossroads of sincere, empirical, and technological research. AlphaTrue's primary focuses are customer experience, advanced products, and clarity and efficiency in the management process.",
     img: momentIMG,
-    link: "/#",
+    link: "/moments/team-building-mui-ne-2022 2",
   },
 ];
 
