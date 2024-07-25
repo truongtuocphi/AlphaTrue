@@ -22,7 +22,7 @@ export default function Moments() {
             </h3>
           </AnimationSection>
           <AnimationSection className="animate-flip-up">
-            <p className="text-sm md:text-base">
+            <p className="text-sm md:text-base xl:text-lg">
               We’re proud to support and invest in over 10+ companies
               <br className="hidden sm:block" />
               in the crypto industry, across every stage and sub-sector.

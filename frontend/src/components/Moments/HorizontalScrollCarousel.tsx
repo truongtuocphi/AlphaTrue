@@ -7,15 +7,13 @@ import Card from "@/components/Moments/Card";
 
 import Avatar_1 from "@/public/images/Team/avatar.png";
 import Avatar_2 from "@/public/images/Team/avatar_member.png";
-import Avatar_3 from "@/public/images/Moment/moment 1.png";
-import Avatar_4 from "@/public/images/Moment/Moment 2.png";
 import Image from "next/image";
 
 const images = [
   { id: 1, src: Avatar_1.src, alt: "Image 1" },
   { id: 2, src: Avatar_2.src, alt: "Image 2" },
-  { id: 3, src: Avatar_3.src, alt: "Image 3" },
-  { id: 4, src: Avatar_4.src, alt: "Image 4" },
+  { id: 3, src: Avatar_1.src, alt: "Image 3" },
+  { id: 4, src: Avatar_2.src, alt: "Image 4" },
 ];
 
 const HorizontalScrollCarousel = () => {
@@ -37,8 +35,8 @@ const HorizontalScrollCarousel = () => {
         setTransformValues(["5%", "-80%"]);
       } else if (window.innerWidth < 1024) {
         setTransformValues(["10%", "-60%"]);
-      } else {
-        setTransformValues(["25%", "-50%"]);
+      } else if (window.innerWidth > 1536) {
+        setTransformValues(["40%", "-60%"]);
       }
     };
 
@@ -84,7 +82,7 @@ const HorizontalScrollCarousel = () => {
   };
 
   return (
-    <section ref={targetRef} className="relative h-[300vh]">
+    <section ref={targetRef} className="relative h-[200vh]">
       <div
         className={`sticky top-0 flex h-screen items-center overflow-hidden ${
           isModalOpen && `hidden`
@@ -97,7 +95,7 @@ const HorizontalScrollCarousel = () => {
             </AnimationSection>
           ))}
         </motion.div>
-        <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 m-4 text-2xl text-black-50">
+        <div className="absolute bottom-5 2xl:bottom-40 left-1/2 transform -translate-x-1/2 m-4 text-2xl text-black-50">
           {currentIndex + 1} - {images.length}
         </div>
       </div>

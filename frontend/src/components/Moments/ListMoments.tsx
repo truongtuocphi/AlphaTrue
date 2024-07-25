@@ -29,7 +29,7 @@ export default function ListMoments() {
           <AnimationSection className="animate-jump-in" key={index}>
             <Link href={link}>
               <div className="group w-full p-2 pb-4 shadow-custom-lg hover:shadow-custom-inset rounded-2xl">
-                <div className="w-full max-h-80 md:max-h-44 lg:max-h-60 xl:max-h-80 rounded-md overflow-hidden">
+                <div className="w-full max-h-80 md:max-h-44 lg:max-h-60 xl:max-h-80 2xl:max-h-[450px] rounded-md overflow-hidden">
                   <Image
                     src={img}
                     alt="Moment"
@@ -37,10 +37,10 @@ export default function ListMoments() {
                   />
                 </div>
                 <div className="mt-2 px-2">
-                  <h5 className="text-xl text-black-10 font-bold mt-3 mb-2 group-hover:text-second-50">
+                  <h5 className="text-xl xl:text-3xl text-black-10 font-bold mt-3 mb-2 group-hover:text-second-50">
                     {title}
                   </h5>
-                  <p className="text-sm text-black50 line-clamp-3">
+                  <p className="text-sm xl:text-lg text-black50 line-clamp-3">
                     {describe}
                   </p>
                 </div>
