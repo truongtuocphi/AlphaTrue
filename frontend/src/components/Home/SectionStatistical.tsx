@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from "react";
 
 const listStatistical = [
-  { number: 20, name: "PROJECT DONE" },
-  { number: 50, name: "TRUSTED PEOPLE" },
-  { number: 100, name: "HAPPY CLIENTS" },
+  { number: 20, name: "COMPLETED PROJECTS" },
+  { number: 50, name: "TRUSTED PARTNERS" },
+  { number: 100, name: "SATISFIED CLIENTS" },
   { number: 40, name: "TEAM MEMBERS" },
 ];
 

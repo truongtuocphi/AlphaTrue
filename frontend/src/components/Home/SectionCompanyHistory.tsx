@@ -13,15 +13,24 @@ export default function SectionCompanyHistory() {
             <h4 className="text-4xl text-second-50 mb-6 font-bold">
               History - Story
             </h4>
+            <h5 className="text-black mb-2">Our Journey</h5>
             <p className="text-base text-black-50">
-              AlphaTrue offers a multi-sectoral strategy and a one-stop solution
-              for your business in the blockchain industry.
+              Founded in April 2021, AlphaTrue was born from the collaboration
+              of seasoned experts across the blockchain and crypto industry. Our
+              team brings a diverse range of expertise, from technical
+              development and blockchain architecture to investment strategies,
+              marketing innovations, and regulatory compliance. United by a
+              shared vision, we aim to drive forward the adoption and evolution
+              of decentralized technologies.
               <br />
               <br />
-              We work at the crossroads of sincere, empirical, and technological
-              research. AlphaTrue primary focuses are customer experience,
-              advanced products, and clarity and efficiency in the management
-              process.
+              At AlphaTrue, we believe in offering a multi-sectoral approach,
+              providing a comprehensive, one-stop solution tailored to meet the
+              diverse needs of blockchain businesses. Rooted in the principles
+              of technical innovation, empirical research, and client-focused
+              execution, every solution is designed using cutting-edge
+              technology and data-driven insights, ensuring our clients stay
+              ahead in the fast-evolving blockchain industry.
             </p>
           </div>
         </AnimationSection>

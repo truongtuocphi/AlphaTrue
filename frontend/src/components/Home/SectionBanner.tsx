@@ -28,7 +28,7 @@ export default function SectionBanner() {
           </div>
           <div className="text-center mt-12 animate-fade-up">
             <h6 className="text-base sm:text-xl lg:text-2xl 2xl:text-4xl font-medium text-black-100">
-              The true solution for the alpha projects in the
+              The true solution for the alpha projects in the{" "}
               <br className="block sm:hidden" />
               decentralized world
             </h6>

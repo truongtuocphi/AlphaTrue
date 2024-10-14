@@ -4,17 +4,19 @@ import IconLinkedin from "./icons/IconLinkedin";
 import ContactInput from "./ContactInput";
 
 const listItemFooter = [
-  { icon: <IconLinkedin />, link: "/#1" },
-  { icon: <IconLinkedin />, link: "/#2" },
+  { icon: <IconLinkedin />, link: "https://x.com/AlphaTrueAPT" },
+  { icon: <IconLinkedin />, link: "https://t.me/APTAnalytics " },
   { icon: <IconLinkedin />, link: "/#3" },
   { icon: <IconLinkedin />, link: "/#4" },
   { icon: <IconLinkedin />, link: "/#5" },
 ];
 
 const linkProducts = [
-  { name: "Portfolio 1", link: "/#1" },
-  { name: "Portfolio 2", link: "/#2" },
-  { name: "Portfolio 3", link: "/#3" },
+  { name: "Press", link: "/#1" },
+  { name: "Blogs", link: "/#2" },
+  { name: "Privacy Policy", link: "/#3" },
+  { name: "Terms & Conditions", link: "/#3" },
+  { name: "Careers", link: "/#3" },
 ];
 
 export default function Footer() {
@@ -96,14 +98,14 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="w-full h-fit grid grid-flow-row justify-center gap-3 px-4 lg:flex lg:justify-between items-center border-t-[0.5px] lg:px-28 py-5 border-black-80 text-black-80">
-        <div>Copyright © 2024 AlphaTrue. All Rights Reserved.</div>
-        <nav>
+      <div className="w-full h-fit grid grid-flow-row justify-center gap-3 px-4 lg:flex lg:justify-center items-center border-t-[0.5px] lg:px-28 py-5 border-black-80 text-black-80">
+        <div>Copyright © 2022 AlphaTrue | All Rights Reserved</div>
+        {/* <nav>
           <ul className="flex gap-8 text-sm justify-center lg:justify-normal">
             <li>Terms of Service</li>
             <li>Privacy Policy</li>
           </ul>
-        </nav>
+        </nav> */}
       </div>
     </footer>
   );

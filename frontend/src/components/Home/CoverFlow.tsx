@@ -102,15 +102,18 @@ const Coverflow = (props: { imageData: any[] }) => {
                     <div className="w-full h-full absolute top-0 bg-bgCoverFlow"></div>
                     <div className="absolute bottom-8 left-10 w-full max-w-sm">
                       <p className="text-sm mb-8 text-black-100">
-                        AlphaTrue offers a multi-sectoral strategy and a
-                        one-stop solution for your business in the blockchain
-                        industry.
+                        AlphaTrue is committed to fostering an open, inclusive
+                        financial system where the brightest minds can access
+                        the resources and financial support needed to turn
+                        visionary ideas into successful, global ventures.
                         <br />
                         <br />
-                        We work at the crossroads of sincere, empirical, and
-                        technological research. AlphaTrue primary focuses are
-                        customer experience, advanced products, and clarity and
-                        efficiency in the management process.
+                        Having incubated over 10 pioneering companies across
+                        diverse sectors, we specialize in accelerating
+                        innovation from concept to execution. Our support spans
+                        technical development, financial backing, strategic
+                        mentorship, and industry connections, ensuring each
+                        project reaches its full potential.
                       </p>
                       <div className="text-black-100">
                         <div className="mb-3">AlphaTrue</div>
@@ -136,15 +139,18 @@ const Coverflow = (props: { imageData: any[] }) => {
                     <div className="w-full h-full absolute top-0 bg-bgCoverFlow"></div>
                     <div className="absolute bottom-8 left-10 w-full max-w-sm">
                       <p className="text-sm mb-8 text-black-100">
-                        AlphaTrue offers a multi-sectoral strategy and a
-                        one-stop solution for your business in the blockchain
-                        industry.
+                        AlphaTrue is committed to fostering an open, inclusive
+                        financial system where the brightest minds can access
+                        the resources and financial support needed to turn
+                        visionary ideas into successful, global ventures.
                         <br />
                         <br />
-                        We work at the crossroads of sincere, empirical, and
-                        technological research. AlphaTrue primary focuses are
-                        customer experience, advanced products, and clarity and
-                        efficiency in the management process.
+                        Having incubated over 10 pioneering companies across
+                        diverse sectors, we specialize in accelerating
+                        innovation from concept to execution. Our support spans
+                        technical development, financial backing, strategic
+                        mentorship, and industry connections, ensuring each
+                        project reaches its full potential.
                       </p>
                       <div className="text-black-100">
                         <div className="mb-3">AlphaTrue</div>

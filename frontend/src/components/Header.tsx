@@ -53,9 +53,9 @@ const Header = ({
     >
       <header className="w-full flex gap-2 items-center justify-between px-6 md:justify-normal md:w-fit md:px-0">
         <div
-          className={`p-3 size-12 rounded-full ${isMenuOpen && "hidden"} ${
-            isSticky ? bgColor : bgColorScroll
-          }`}
+          className={`p-3 size-12 backdrop-blur-lg rounded-full ${
+            isMenuOpen && "hidden"
+          } ${isSticky ? bgColor : bgColorScroll}`}
         >
           <Link href="/">
             <IconHome color={fill} />
@@ -63,7 +63,7 @@ const Header = ({
         </div>
 
         <div
-          className={`w-full top-10 hidden items-center justify-between md:flex ${
+          className={`w-full top-10 backdrop-blur-lg hidden items-center justify-between md:flex ${
             isSticky ? bgColor : bgColorScroll
           } px-8 py-3 rounded-2xl`}
         >

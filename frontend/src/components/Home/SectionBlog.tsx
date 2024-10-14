@@ -69,12 +69,12 @@ export default function SectionBlog() {
           >
             <div className="w-full max-w-96 flex flex-col gap-6 mb-6 lg:mb-0">
               <h4 className="text-xl md:text-2xl lg:text-4xl font-bold text-second-50">
-                ATP on Media
+                APT in the Media
               </h4>
               <p className="text-base text-black-50 font-normal">
-                We’re proud to support and invest in over 10+ companies in the
-                crypto industry, across every stage and sub- sector. Meet our
-                portfolio below.
+                AlphaTrue is proud to be a leading voice in the blockchain
+                industry, featured in prominent media outlets and spotlighted at
+                prestigious blockchain events.
               </p>
               <Button className="w-36 bg-black-95 py-2 px-3 text-black-20 text-sm border-2 border-black-90">
                 Read More News
