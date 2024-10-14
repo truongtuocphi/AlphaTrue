@@ -17,7 +17,7 @@ export default function Invest() {
       </div>
       <SectionBannerPage
         title="Investor"
-        des="Were's proud to support and invest in over 10+ companies in the crypto industry, across every stage and sub-sector. Meet our portfolio below."
+        des="We’ve had the honor of working with visionary brands and teams, helping them take their projects to new heights. Through this journey, we’ve gained a wealth of knowledge and data that drives our strategy and sparks ongoing innovation."
         img={APT.src}
       />
 

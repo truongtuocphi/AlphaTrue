@@ -101,9 +101,7 @@ const ListPortfolio = () => {
         </AnimationSection>
         <AnimationSection className="animate-flip-up">
           <p className="text-sm md:text-base">
-            We’re proud to support and invest in over 10+ companies in the
-            crypto industry, across every stage and sub-sector. Meet our
-            portfolio below.
+            Explore the success stories we’ve proudly supported.
           </p>
         </AnimationSection>
       </div>

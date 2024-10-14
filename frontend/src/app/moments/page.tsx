@@ -23,11 +23,12 @@ export default function Moments() {
           </AnimationSection>
           <AnimationSection className="animate-flip-up">
             <p className="text-sm md:text-base xl:text-lg">
-              We’re proud to support and invest in over 10+ companies
-              <br className="hidden sm:block" />
-              in the crypto industry, across every stage and sub-sector.
-              <br className="hidden sm:block" />
-              Meet our portfolio below.
+              From a small, passionate team to a thriving company of 100+
+              members, every milestone at AlphaTrue has strengthened our unity
+              and purpose. Each trip, event, and achievement brings us closer,
+              reminding us of how far we’ve come and inspiring us to push
+              forward, continue our shared pursuit of innovation and excellence
+              in the blockchain world.
             </p>
           </AnimationSection>
         </div>
