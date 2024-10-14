@@ -11,12 +11,17 @@ const listItemFooter = [
   { icon: <IconLinkedin />, link: "/#5" },
 ];
 
-const linkProducts = [
+const linkProducts_1 = [
   { name: "Press", link: "/#1" },
   { name: "Blogs", link: "/#2" },
   { name: "Privacy Policy", link: "/#3" },
   { name: "Terms & Conditions", link: "/#3" },
   { name: "Careers", link: "/#3" },
+];
+
+const linkProducts_2 = [
+  { name: "support@alphatrue.com", link: "/#1" },
+  { name: "Diamond Plaza, District 1, Ho Chi Minh City, Vietnam", link: "/#2" },
 ];
 
 export default function Footer() {
@@ -47,9 +52,9 @@ export default function Footer() {
 
         <div className="flex gap-32">
           <div className="flex flex-col gap-8">
-            <div className="text-sm font-bold text-black-10">PRODUCTS</div>
+            <div className="text-sm font-bold text-black-10">Company</div>
             <div className="flex flex-col gap-6">
-              {linkProducts.map(({ name, link }) => {
+              {linkProducts_1.map(({ name, link }) => {
                 return (
                   <ul key={name}>
                     <li className="text-base text-black-50">
@@ -63,9 +68,9 @@ export default function Footer() {
         </div>
         <div className="flex gap-32">
           <div className="flex flex-col gap-8">
-            <div className="text-sm font-bold text-black-10">PRODUCTS</div>
+            <div className="text-sm font-bold text-black-10">Contact Us</div>
             <div className="flex flex-col gap-6">
-              {linkProducts.map(({ name, link }) => {
+              {linkProducts_2.map(({ name, link }) => {
                 return (
                   <ul key={name}>
                     <li className="text-base text-black-50">
