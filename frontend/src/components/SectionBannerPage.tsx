@@ -12,10 +12,10 @@ const SectionBannerPage: React.FC<{
   return (
     <section>
       <div className="w-full flex-col gap-8 justify-center lg:flex lg:flex-row lg:grid-rows-1 items-center px-6 lg:px-36 xl:px-44 2xl:px-96 mt-28 lg:mt-40">
-        <div className="mb-5">
+        <div className="mb-5 text-center lg:text-start">
           <div className="mb-3">
             <AnimationSection className="animate-flip-down">
-              <h3 className="text-2xl sm:text-4xl xl:text-6xl font-bold text-black-50">
+              <h3 className="text-3xl sm:text-5xl xl:text-6xl font-bold text-black-50">
                 AlphaTrue <span className="text-second-50">{title}</span>
               </h3>
             </AnimationSection>
