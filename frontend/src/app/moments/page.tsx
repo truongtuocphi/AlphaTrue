@@ -21,8 +21,8 @@ export default function Moments() {
               APTer&apos;s <span className="text-second-50">Moments</span>
             </h3>
           </AnimationSection>
-          <AnimationSection className="animate-flip-up">
-            <p className="text-sm md:text-base xl:text-lg">
+          <AnimationSection className="animate-flip-up flex items-center justify-center">
+            <p className="text-sm md:text-base xl:text-lg 2xl:w-1/2 text-center">
               From a small, passionate team to a thriving company of 100+
               members, every milestone at AlphaTrue has strengthened our unity
               and purpose. Each trip, event, and achievement brings us closer,
