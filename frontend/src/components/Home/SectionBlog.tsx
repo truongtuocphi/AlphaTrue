@@ -67,8 +67,8 @@ export default function SectionBlog() {
           <AnimationSection
             className={`animate-fade-right animate-once animate-duration-[2000ms]`}
           >
-            <div className="w-full max-w-96 flex flex-col gap-6 mb-6 lg:mb-0">
-              <h4 className="text-xl md:text-2xl lg:text-4xl font-bold text-second-50">
+            <div className="w-full max-w-96 flex flex-col gap-6 mb-4 lg:mb-0">
+              <h4 className="text-xl md:text-3xl lg:text-5xl font-bold text-second-50">
                 APT in the Media
               </h4>
               <p className="text-base text-black-50 font-normal">
