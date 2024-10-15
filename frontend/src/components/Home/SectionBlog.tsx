@@ -76,7 +76,7 @@ export default function SectionBlog() {
                 industry, featured in prominent media outlets and spotlighted at
                 prestigious blockchain events.
               </p>
-              <Button className="w-36 bg-black-95 py-2 px-3 text-black-20 text-sm border-2 border-black-90">
+              <Button className="w-36 bg-black-95 py-2 px-3 font-normal text-black-20 text-sm border-[1px] border-black-90">
                 Read More News
               </Button>
             </div>

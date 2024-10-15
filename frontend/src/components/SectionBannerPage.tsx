@@ -21,7 +21,9 @@ const SectionBannerPage: React.FC<{
             </AnimationSection>
           </div>
           <AnimationSection className="animate-flip-up">
-            <p className="text-sm md:text-xl 2xl:text-2xl">{des}</p>
+            <p className="text-sm md:text-xl 2xl:text-2xl mt-5 !leading-9 text-black-60">
+              {des}
+            </p>
           </AnimationSection>
         </div>
 
