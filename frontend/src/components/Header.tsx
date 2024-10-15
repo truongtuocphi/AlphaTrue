@@ -72,7 +72,7 @@ const Header = ({
               {listMenu.map(({ title, link }) => (
                 <li
                   key={title}
-                  className={`${textColor} text-base 2xl:text-2xl font-bold`}
+                  className={`${textColor} text-base 2xl:text-2xl`}
                 >
                   <Link href={link}>{title}</Link>
                 </li>

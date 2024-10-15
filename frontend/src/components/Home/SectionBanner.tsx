@@ -27,7 +27,7 @@ export default function SectionBanner() {
             <IconLogoWhite width="100%" height="100%" />
           </div>
           <div className="text-center mt-12 animate-fade-up">
-            <h6 className="text-base sm:text-xl lg:text-3xl 2xl:text-5xl font-medium text-black-100">
+            <h6 className="text-base sm:text-xl lg:text-3xl 2xl:text-5xl text-black-100">
               The true solution for the alpha projects in the{" "}
               <br className="block sm:hidden" />
               decentralized world

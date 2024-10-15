@@ -5,7 +5,14 @@ import Footer from "@/components/Footer";
 
 import "./globals.css";
 
-const Mark_Pro = localFont({ src: "./Mark Pro.ttf" });
+// const Mark_Pro = localFont({ src: "./Mark Pro.ttf" });
+const Mark_Pro = localFont({
+  src: [
+    { path: "./Mark Pro.ttf", weight: "400" },
+    { path: "./MarkPro_Bold.ttf", weight: "500" },
+  ],
+  variable: "--font-mark-pro",
+});
 
 export const metadata: Metadata = {
   title: "AlphaTrue",

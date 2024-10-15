@@ -9,6 +9,7 @@ import SectionCompanyHistory from "@/components/Home/SectionCompanyHistory";
 import SectionStakeholders from "@/components/Home/SectionStakeholders";
 import SectionTeam from "@/components/Home/SectionTeam";
 import SectionAchievements from "@/components/Home/SectionAchievements";
+import ContactFrom from "@/components/Home/ContactFrom";
 
 export default async function Home() {
   const payload = await getData("posts");
@@ -22,16 +23,20 @@ export default async function Home() {
         <SectionCompanyHistory />
       </div>
 
-      <div>
+      <>
         <SectionStakeholders />
-      </div>
+      </>
 
       <div className="flex justify-center px-6 lg:mx-auto">
         <SectionAchievements />
       </div>
 
-      <div>
+      <>
         <SectionBlog />
+      </>
+
+      <div className="mt-52">
+        <ContactFrom />
       </div>
     </div>
   );
