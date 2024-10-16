@@ -5,7 +5,8 @@ const SectionStakeholdersMobile: React.FC<{
   link: any;
   title: string;
   router: string;
-}> = ({ link, title, router }) => {
+  des: string;
+}> = ({ link, title, router, des }) => {
   return (
     <div className="bg-black-10 w-full p-3 rounded-xl">
       <Link href={router}>
@@ -17,11 +18,7 @@ const SectionStakeholdersMobile: React.FC<{
             <h4 className="text-4xl font-bold ">{title}</h4>
           </div>
         </div>
-        <p className="text-black-100 text-base md:text-xl mt-4">
-          We work at the crossroads of sincere, empirical, and technological
-          research. AlphaTrue primary focuses are customer experience, advanced
-          products, and clarity and efficiency in the management process.
-        </p>
+        <p className="text-black-100 text-base md:text-xl mt-4">{des}</p>
       </Link>
     </div>
   );

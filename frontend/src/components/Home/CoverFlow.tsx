@@ -81,7 +81,7 @@ const Coverflow = (props: { imageData: any[] }) => {
   return (
     <div className={styles.container}>
       <div className={styles.coverflow} ref={el}>
-        {props.imageData.map(({ link, title, icon, router }, index) => (
+        {props.imageData.map(({ link, title, icon, router, des }, index) => (
           <div
             key={title}
             onMouseOver={() => target(index)}
@@ -101,20 +101,7 @@ const Coverflow = (props: { imageData: any[] }) => {
                   <>
                     <div className="w-full h-full absolute top-0 bg-bgCoverFlow"></div>
                     <div className="absolute bottom-8 left-10 w-full max-w-sm">
-                      <p className="text-sm mb-8 text-black-100">
-                        AlphaTrue is committed to fostering an open, inclusive
-                        financial system where the brightest minds can access
-                        the resources and financial support needed to turn
-                        visionary ideas into successful, global ventures.
-                        <br />
-                        <br />
-                        Having incubated over 10 pioneering companies across
-                        diverse sectors, we specialize in accelerating
-                        innovation from concept to execution. Our support spans
-                        technical development, financial backing, strategic
-                        mentorship, and industry connections, ensuring each
-                        project reaches its full potential.
-                      </p>
+                      <p className="text-sm mb-8 text-black-100">{des}</p>
                       <div className="text-black-100">
                         <div className="mb-3">AlphaTrue</div>
                         <h2 className="text-6xl font-bold ">{title}</h2>
@@ -138,20 +125,7 @@ const Coverflow = (props: { imageData: any[] }) => {
                   <>
                     <div className="w-full h-full absolute top-0 bg-bgCoverFlow"></div>
                     <div className="absolute bottom-8 left-10 w-full max-w-sm">
-                      <p className="text-sm mb-8 text-black-100">
-                        AlphaTrue is committed to fostering an open, inclusive
-                        financial system where the brightest minds can access
-                        the resources and financial support needed to turn
-                        visionary ideas into successful, global ventures.
-                        <br />
-                        <br />
-                        Having incubated over 10 pioneering companies across
-                        diverse sectors, we specialize in accelerating
-                        innovation from concept to execution. Our support spans
-                        technical development, financial backing, strategic
-                        mentorship, and industry connections, ensuring each
-                        project reaches its full potential.
-                      </p>
+                      <p className="text-sm mb-8 text-black-100">{des}</p>
                       <div className="text-black-100">
                         <div className="mb-3">AlphaTrue</div>
                         <h2 className="text-6xl font-bold ">{title}</h2>

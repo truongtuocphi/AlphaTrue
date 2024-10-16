@@ -17,9 +17,22 @@ const images = [
     title: "INCUBATOR",
     icon: <IconIncubator />,
     router: "/incubator",
+    des: "AlphaTrue is committed to fostering an open, inclusive financial system where the brightest minds can access the resources and financial support needed to turn visionary ideas into successful, global ventures. Having incubated over 10 pioneering companies across diverse sectors, we specialize in accelerating innovation from concept to execution. Our support spans technical development, financial backing, strategic mentorship, and industry connections, ensuring each project reaches its full potential.",
   },
-  { link: APT1, title: "LABS", icon: <IconLabs />, router: "/labs" },
-  { link: APT3, title: "MEDIA", icon: <IconMedia />, router: "/media" },
+  {
+    link: APT1,
+    title: "LABS",
+    icon: <IconLabs />,
+    router: "/labs",
+    des: "We work at the crossroads of sincere, empirical, and technological research. AlphaTrue's primary focuses are customer experience, advanced products, and clarity and efficiency in the management process.",
+  },
+  {
+    link: APT3,
+    title: "MEDIA",
+    icon: <IconMedia />,
+    router: "/media",
+    des: "We work at the crossroads of sincere, empirical, and technological research. AlphaTrue's primary focuses are customer experience, advanced products, and clarity and efficiency in the management process.",
+  },
 ];
 
 export default function SectionStakeholders() {
@@ -41,6 +54,7 @@ export default function SectionStakeholders() {
                   link={item.link}
                   title={item.title}
                   router={item.router}
+                  des={item.des}
                 />
               </div>
             );
