@@ -1,4 +1,4 @@
-import { getData } from "@/config/api.config";
+// import { getData } from "@/config/api.config";
 
 import SectionBanner from "@/components/Home/SectionBanner";
 import SectionBlog from "@/components/Home/SectionBlog";
@@ -8,8 +8,8 @@ import SectionAchievements from "@/components/Home/SectionAchievements";
 import ContactFrom from "@/components/Home/ContactFrom";
 
 export default async function Home() {
-  const payload = await getData("posts");
-  const postList = payload.data;
+  // const payload = await getData("posts");
+  // const postList = payload.data;
 
   return (
     <div>

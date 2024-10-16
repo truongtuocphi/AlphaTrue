@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 
 import "./globals.css";
 
-// const Mark_Pro = localFont({ src: "./Mark Pro.ttf" });
 const Mark_Pro = localFont({
   src: [
     { path: "./Mark Pro.ttf", weight: "400" },
