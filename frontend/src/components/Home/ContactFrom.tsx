@@ -1,7 +1,7 @@
 export default function ContactFrom() {
   return (
     <div className="w-full flex items-center justify-center">
-      <div className="w-3/5 flex flex-col xl:flex-row items-start gap-10">
+      <div className="w-full lg:w-3/5 flex flex-col xl:flex-row items-start gap-10 px-6">
         <div className="flex flex-col gap-2">
           <div className="font-bold text-5xl text-second-50">
             Elevate Your Business Today
