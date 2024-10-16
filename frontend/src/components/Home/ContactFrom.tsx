@@ -1,4 +1,14 @@
+"use client";
+
+import { useForm, ValidationError } from "@formspree/react";
+
 export default function ContactFrom() {
+  const [state, handleSubmit] = useForm("mkgnnqbd");
+
+  // if (state.succeeded) {
+  //   return <p>Thanks for your submission!</p>;
+  // }
+
   return (
     <div className="w-full flex items-center justify-center">
       <div className="w-full lg:w-3/5 flex flex-col xl:flex-row items-start gap-10 px-6">
@@ -15,7 +25,7 @@ export default function ContactFrom() {
         <div className="w-full rounded-lg p-6 bg-[#F0FBFF]">
           <h2 className="text-3xl font-bold mb-6">Book a Discovery Session</h2>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="flex gap-4">
               <div className="w-1/2 mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-3">
@@ -24,6 +34,7 @@ export default function ContactFrom() {
                 <input
                   type="text"
                   id="full-name"
+                  name="fullname"
                   placeholder="Enter your full name"
                   className="mt-1 block w-full rounded-lg px-2 py-4 focus:ring-blue-500 focus:border-blue-500"
                   required
@@ -31,12 +42,16 @@ export default function ContactFrom() {
               </div>
 
               <div className="w-1/2 mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-3">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 mb-3"
+                >
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   placeholder="Enter your email address"
                   className="mt-1 block w-full rounded-lg px-2 py-4 focus:ring-blue-500 focus:border-blue-500"
                   required
@@ -51,6 +66,7 @@ export default function ContactFrom() {
               <input
                 type="tel"
                 id="phone"
+                name="phone"
                 placeholder="Enter your phone number"
                 className="mt-1 block w-full rounded-lg px-2 py-4 focus:ring-blue-500 focus:border-blue-500"
                 required
@@ -64,6 +80,7 @@ export default function ContactFrom() {
               <textarea
                 id="message"
                 placeholder="Enter your message"
+                name="message"
                 className="mt-1 block w-full rounded-lg px-2 py-4 focus:ring-blue-500 focus:border-blue-500"
                 required
               ></textarea>
@@ -71,10 +88,18 @@ export default function ContactFrom() {
 
             <button
               type="submit"
+              disabled={state.submitting}
               className="w-fit bg-second-50 text-white py-2 px-3 rounded-md hover:bg-second-60 focus:outline-none focus:ring-2 focus:ring-second-70 focus:ring-opacity-50"
             >
               Submit
             </button>
+            {state.succeeded ? (
+              <p>Thanks for your submission!</p>
+            ) : (
+              <div className="mt-4 text-red-500">
+                <ValidationError errors={state.errors} />
+              </div>
+            )}
           </form>
         </div>
       </div>
