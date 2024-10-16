@@ -1,9 +1,19 @@
 "use client";
 
+import { useRef } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 
-export default function ContactFrom() {
+export default function ContactForm() {
   const [state, handleSubmit] = useForm("mkgnnqbd");
+  const formRef = useRef<HTMLFormElement | null>(null);
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    await handleSubmit(event);
+    if (state.succeeded) {
+      formRef.current?.reset();
+    }
+  };
 
   return (
     <div className="w-full flex items-center justify-center">
@@ -21,7 +31,7 @@ export default function ContactFrom() {
         <div className="w-full rounded-lg p-6 bg-[#F0FBFF]">
           <h2 className="text-3xl font-bold mb-6">Book a Discovery Session</h2>
 
-          <form onSubmit={handleSubmit}>
+          <form ref={formRef} onSubmit={onSubmit}>
             <div className="flex gap-4">
               <div className="w-1/2 mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-3">
