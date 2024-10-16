@@ -5,10 +5,6 @@ import { useForm, ValidationError } from "@formspree/react";
 export default function ContactFrom() {
   const [state, handleSubmit] = useForm("mkgnnqbd");
 
-  // if (state.succeeded) {
-  //   return <p>Thanks for your submission!</p>;
-  // }
-
   return (
     <div className="w-full flex items-center justify-center">
       <div className="w-full lg:w-3/5 flex flex-col xl:flex-row items-start gap-10 px-6">
@@ -94,7 +90,7 @@ export default function ContactFrom() {
               Submit
             </button>
             {state.succeeded ? (
-              <p>Thanks for your submission!</p>
+              <p className="mt-4 text-green-500">Thanks for your submission!</p>
             ) : (
               <div className="mt-4 text-red-500">
                 <ValidationError errors={state.errors} />
