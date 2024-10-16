@@ -120,7 +120,7 @@ export default function Footer() {
         </div> */}
       </div>
 
-      <div className="w-full h-fit grid grid-flow-row justify-center gap-3 px-4 lg:flex lg:justify-center items-center border-t-[0.5px] lg:px-28 py-5 border-black-80 text-black-80">
+      <div className="w-full h-fit grid grid-flow-row justify-center gap-3 px-4 lg:flex lg:justify-center items-center border-t-[0.5px] lg:px-28 py-5 border-black-90 text-black-80">
         <div>Copyright © 2022 AlphaTrue | All Rights Reserved</div>
       </div>
     </footer>
