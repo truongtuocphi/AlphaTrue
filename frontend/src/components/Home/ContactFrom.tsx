@@ -16,7 +16,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-full flex items-center justify-center">
+    <div className="w-full flex items-center justify-center mt-52">
       <div className="w-full lg:w-3/5 flex flex-col xl:flex-row items-start gap-10 px-6">
         <div className="flex flex-col gap-2">
           <div className="font-bold text-5xl text-second-50">

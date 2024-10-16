@@ -12,28 +12,17 @@ export default async function Home() {
   // const postList = payload.data;
 
   return (
-    <div>
+    <>
       <SectionBanner />
-
       <div className="flex justify-center my-12 md:mt-52 md:mb-32">
         <SectionCompanyHistory />
       </div>
-
-      <>
-        <SectionStakeholders />
-      </>
-
+      <SectionStakeholders />
       <div className="flex justify-center px-6 lg:mx-auto">
         <SectionAchievements />
       </div>
-
-      <>
-        <SectionBlog />
-      </>
-
-      <div className="mt-52">
-        <ContactFrom />
-      </div>
-    </div>
+      <SectionBlog />
+      <ContactFrom />
+    </>
   );
 }
