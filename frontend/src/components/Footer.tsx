@@ -42,10 +42,10 @@ export default function Footer() {
   return (
     <footer className="w-full bg-black-95 mt-12 lg:mt-36">
       <div className="grid grid-flow-row gap-9 px-6 py-6 lg:flex lg:justify-between lg:gap-0 lg:py-14 lg:px-28 ">
-        <div>
-          <div className="flex flex-col gap-3 mb-11">
+        <div className="flex flex-col justify-center items-center lg:items-start">
+          <div className="flex flex-col items-center lg:items-start gap-3 mb-11">
             <IconLogo />
-            <div className="text-sm text-black-50">
+            <div className="text-sm text-black-50 text-center lg:text-left">
               AlphaTrue offers a multi-sectoral
               <br />
               strategy and a one-stop solution for
@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex items-start gap-16">
+        <div className="flex flex-col lg:flex-row items-start gap-16">
           <div className="flex gap-32">
             <div className="flex flex-col gap-8">
               <div className="text-sm font-bold text-black-10">Company</div>
