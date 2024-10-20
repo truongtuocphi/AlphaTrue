@@ -15,11 +15,11 @@
 .coverflow {
   position: absolute;
   top: 30%;
-  left: 44%;
+  left: 49%;
   backface-visibility: visible;
   transform: scale(1) translateZ(-125px);
   transform-style: preserve-3d;
-  transform-origin: 50% 50%;
+  transform-origin: center;
   cursor: pointer;
 }
 

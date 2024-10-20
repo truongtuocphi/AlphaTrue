@@ -31,25 +31,32 @@ const Coverflow = (props: { imageData: any[] }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.imageData]);
 
-  useEffect(() => {
-    if (!isPaused) {
-      intervalRef.current = setInterval(() => {
-        setCenterIndex((prevIndex) => {
-          const nextIndex =
-            prevIndex !== null ? (prevIndex + 1) % props.imageData.length : 0;
-          target(nextIndex);
-          return nextIndex;
-        });
-      }, AUTO_SLIDE_INTERVAL);
-    }
+  // useEffect(() => {
+  //   if (!isPaused) {
+  //     intervalRef.current = setInterval(() => {
+  //       setCenterIndex((prevIndex) => {
+  //         const nextIndex =
+  //           prevIndex !== null ? (prevIndex + 1) % props.imageData.length : 0;
+  //         target(nextIndex);
+  //         return nextIndex;
+  //       });
+  //     }, AUTO_SLIDE_INTERVAL);
+  //   }
 
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
+  //   return () => {
+  //     if (intervalRef.current) {
+  //       clearInterval(intervalRef.current);
+  //     }
+  //   };
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [isPaused, props.imageData]);
+
+  useEffect(() => {
+    // Đặt index ban đầu là 2 để hình thứ 3 hiện lên trước
+    target(2);
+    setCenterIndex(2); // Đặt index ban đầu là 2
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isPaused, props.imageData]);
+  }, [props.imageData]);
 
   function target(index: number) {
     const items = el.current!.children;
@@ -114,10 +121,7 @@ const Coverflow = (props: { imageData: any[] }) => {
                       centerIndex === 0 ? "right-5" : "left-7"
                     } -rotate-0`}
                   >
-                    <div className="text-black-100 text-center">
-                      {/* <h2 className="text-6xl font-bold">{title}</h2> */}
-                      {icon}
-                    </div>
+                    <div className="text-black-100 text-center">{icon}</div>
                   </div>
                 )}
 
@@ -138,10 +142,7 @@ const Coverflow = (props: { imageData: any[] }) => {
                       index == 2 ? "right-5" : "left-7"
                     }  -rotate-0`}
                   >
-                    <div className="text-black-100 text-center">
-                      {/* <h2 className="text-6xl font-bold">{title}</h2> */}
-                      {icon}
-                    </div>
+                    <div className="text-black-100 text-center">{icon}</div>
                   </div>
                 )}
               </div>
