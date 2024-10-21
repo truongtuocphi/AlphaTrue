@@ -46,7 +46,6 @@ export default function ContactForm() {
                   required
                 />
               </div>
-
               <div className="w-1/2 mb-4">
                 <label
                   htmlFor="email"
@@ -91,7 +90,6 @@ export default function ContactForm() {
                 required
               ></textarea>
             </div>
-
             <button
               type="submit"
               disabled={state.submitting}
