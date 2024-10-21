@@ -14,14 +14,19 @@ export default async function Home() {
   return (
     <>
       <SectionBanner />
-      <div className="flex justify-center my-12 md:mt-52 md:mb-32">
+
+      <div className="flex justify-center my-12 md:mt-72 md:mb-72">
         <SectionCompanyHistory />
       </div>
+
       <SectionStakeholders />
+
       <div className="flex justify-center px-6 lg:mx-auto">
         <SectionAchievements />
       </div>
-      <SectionBlog />
+      <div className="my-72">
+        <SectionBlog />
+      </div>
       <ContactFrom />
     </>
   );
