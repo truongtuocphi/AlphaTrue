@@ -14,6 +14,7 @@ const AUTO_SLIDE_INTERVAL = 4000;
 const Coverflow = (props: { imageData: any[] }) => {
   const el = useRef<HTMLDivElement>(null);
   const [centerIndex, setCenterIndex] = useState<number | null>(null);
+
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -51,10 +52,10 @@ const Coverflow = (props: { imageData: any[] }) => {
   //   // eslint-disable-next-line react-hooks/exhaustive-deps
   // }, [isPaused, props.imageData]);
 
+  // Đặt index ban đầu là 2 để hình thứ 3 hiện lên trước
   useEffect(() => {
-    // Đặt index ban đầu là 2 để hình thứ 3 hiện lên trước
     target(2);
-    setCenterIndex(2); // Đặt index ban đầu là 2
+    setCenterIndex(2);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.imageData]);
 
