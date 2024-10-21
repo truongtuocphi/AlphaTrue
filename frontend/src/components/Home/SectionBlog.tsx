@@ -69,7 +69,7 @@ export default function SectionBlog() {
           >
             <div className="w-full max-w-96 flex flex-col gap-6 mb-4 lg:mb-0">
               <h4 className="text-xl md:text-3xl lg:text-5xl font-bold text-second-50">
-                APT in the Media
+                APT In The Media
               </h4>
               <p className="text-base text-black-50 font-normal">
                 AlphaTrue is proud to be a leading voice in the blockchain
